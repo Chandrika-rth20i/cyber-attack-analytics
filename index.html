@@ -1,0 +1,451 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cyber Analytics</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: system-ui, sans-serif; background: #f4f6fb; color: #1a2233; display: flex; min-height: 100vh; }
+
+.sidebar { width: 230px; background: #0d1526; color: #fff; padding: 22px 16px; flex-shrink: 0; }
+.brand { display: flex; align-items: center; gap: 10px; margin-bottom: 28px; }
+.brand .logo { width: 36px; height: 36px; background: #3ea0ff; border-radius: 9px; display: grid; place-items: center; font-weight: 700; font-size: 14px; }
+.brand b { display: block; font-size: 15px; }
+.brand span { display: block; font-size: 11px; color: #8fa3c2; }
+.sidebar a { display: block; color: #a9b8d1; text-decoration: none; padding: 11px 12px; border-radius: 8px; margin-bottom: 4px; font-size: 14px; cursor: pointer; }
+.sidebar a.active { background: #17233d; color: #fff; border: 1px solid #2ee6c5; }
+
+main { flex: 1; min-width: 0; }
+.topbar { display: flex; justify-content: space-between; align-items: center; background: #fff; padding: 16px 32px; border-bottom: 1px solid #e4e9f2; }
+.eyebrow { font-size: 11px; letter-spacing: 0.08em; color: #8892a6; text-transform: uppercase; }
+.topbar h2 { font-size: 16px; margin-top: 2px; }
+.status { background: #e7f9ef; color: #1a9c5b; font-size: 12px; padding: 6px 14px; border-radius: 20px; font-weight: 600; }
+
+.page { padding: 32px; display: none; }
+.page.active { display: block; }
+h1 { font-size: 26px; margin-bottom: 6px; }
+.muted { color: #667085; margin-bottom: 24px; }
+
+.kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 16px; margin-bottom: 28px; }
+.kpi { background: #fff; border: 1px solid #e4e9f2; border-radius: 14px; padding: 18px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); display: flex; gap: 14px; align-items: flex-start; }
+.icon { width: 40px; height: 40px; border-radius: 10px; display: grid; place-items: center; font-size: 18px; flex-shrink: 0; }
+.kpi b { display: block; font-size: 22px; }
+.kpi span { font-size: 12px; color: #8892a6; }
+
+.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.card { background: #fff; border: 1px solid #e4e9f2; border-radius: 14px; padding: 20px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); margin-bottom: 20px; }
+.card-head { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 14px; }
+.card-head small { display: block; color: #8892a6; font-size: 12px; margin-top: 2px; }
+.tag { background: #eef2ff; color: #3ea0ff; font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 6px; }
+
+.stat-list div { display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid #eef1f6; font-size: 14px; }
+.stat-list div:last-child { border-bottom: none; }
+.stat-list b { color: #1a2233; }
+
+@media (max-width: 850px) {
+  body { flex-direction: column; }
+  .sidebar { width: 100%; display: flex; align-items: center; gap: 16px; }
+  .sidebar a { margin: 0; }
+  .grid2 { grid-template-columns: 1fr; }
+}
+@keyframes pulse { 0%,100% { opacity:1; } 50% { opacity:0.3; } }
+@keyframes fadeSlideIn {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.page.active { animation: fadeSlideIn 0.45s ease; }
+.sidebar a { transition: background 0.2s ease, color 0.2s ease, transform 0.15s ease; }
+.sidebar a:hover { background:#17233d; color:#fff; transform: translateX(3px); }
+.card { transition: transform 0.2s ease, box-shadow 0.2s ease; }
+.card:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(0,0,0,0.08); }
+.kpi { transition: transform 0.2s ease, box-shadow 0.2s ease; }
+.kpi:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(0,0,0,0.08); }
+button { transition: transform 0.15s ease, box-shadow 0.15s ease; }
+button:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(62,160,255,0.35); }
+.status { animation: fadeSlideIn 0.6s ease; }
+body { animation: fadeSlideIn 0.5s ease; }
+</style>
+</head>
+<body>
+
+<div class="sidebar">
+  <div class="brand">
+    <div class="logo">CA</div>
+    <div><b>Cyber Analytics</b><span>Threat Intelligence</span></div>
+  </div>
+  <a data-page="dashboard" class="active">Dashboard</a>
+  <a data-page="records">Attack Records</a>
+  <a data-page="traffic">Traffic Analysis</a>
+  <a data-page="dataset">Dataset</a>
+  <a data-page="risk">Risk Analysis</a>
+  <a data-page="sim">Attack Simulator</a>
+  <a data-page="upload">Upload Dataset</a>
+</div>
+
+<main>
+  <div class="topbar">
+    <div>
+      <p class="eyebrow">CYBERSECURITY PLATFORM</p>
+      <h2 id="pageTitle">Attack Analytics Dashboard</h2>
+    </div>
+    <span class="status">● Data Loaded</span>
+  </div>
+
+  <div class="page active" id="page-dashboard">
+    <p class="eyebrow">OVERVIEW</p>
+    <h1>Network Attack Overview</h1>
+    <p class="muted">Summary of cleaned CIC-IDS2017 traffic flows and detected attack types.</p>
+    <div class="kpis" id="kpis"></div>
+    <div class="grid2">
+      <div class="card">
+        <div class="card-head"><div><h3>Attack Types</h3><small>Flows per attack category</small></div><span class="tag">BAR</span></div>
+        <canvas id="chartLabels"></canvas>
+      </div>
+      <div class="card">
+        <div class="card-head"><div><h3>Traffic by Protocol</h3><small>Share of network protocols</small></div><span class="tag">PIE</span></div>
+        <canvas id="chartProtocol"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <div class="page" id="page-records">
+    <p class="eyebrow">RECORDS</p>
+    <h1>Attack Records</h1>
+    <p class="muted">Real sample flow records from the cleaned dataset. Search or filter by attack type.</p>
+    <div class="card">
+      <div style="display:flex; gap:10px; margin-bottom:16px; flex-wrap:wrap;">
+        <input id="recSearch" placeholder="Search protocol or attack type..." style="flex:1; min-width:200px; padding:10px 14px; border-radius:8px; border:1px solid #ddd; font-size:14px;">
+        <select id="recFilter" style="padding:10px 14px; border-radius:8px; border:1px solid #ddd; font-size:14px;"><option value="">All Attack Types</option></select>
+      </div>
+      <div style="overflow-x:auto;">
+        <table style="width:100%; border-collapse:collapse; font-size:14px;">
+          <thead>
+            <tr style="text-align:left; font-size:12px; color:#8892a6; border-bottom:1px solid #eef1f6;">
+              <th style="padding:10px 8px;">Day</th>
+              <th style="padding:10px 8px;">Protocol</th>
+              <th style="padding:10px 8px;">Packets</th>
+              <th style="padding:10px 8px;">Duration (ms)</th>
+              <th style="padding:10px 8px;">Label</th>
+            </tr>
+          </thead>
+          <tbody id="recBody"></tbody>
+        </table>
+      </div>
+      <p id="recCount" style="margin-top:12px; color:#8892a6; font-size:13px;"></p>
+    </div>
+  </div>
+  </div>
+
+  <div class="page" id="page-traffic">
+    <p class="eyebrow">TRAFFIC</p>
+    <h1>Flow Duration Analysis</h1>
+    <p class="muted">Average connection duration per attack type &mdash; longer durations often mean sustained attacks.</p>
+    <div class="card">
+      <div class="card-head"><div><h3>Avg Flow Duration by Attack</h3><small>Milliseconds per connection</small></div><span class="tag">BAR</span></div>
+      <canvas id="chartDuration"></canvas>
+    </div>
+  </div>
+
+  <div class="page" id="page-dataset">
+    <p class="eyebrow">DATASET</p>
+    <h1>CIC-IDS2017</h1>
+    <p class="muted">Cybersecurity intrusion detection dataset from the Canadian Institute for Cybersecurity.</p>
+    <div class="card">
+      <div class="card-head"><div><h3>Dataset Summary</h3><small>Cleaning &amp; source details</small></div></div>
+      <div class="stat-list" id="datasetStats"></div>
+    </div>
+  </div>
+
+  <div class="page" id="page-risk">
+    <p class="eyebrow">RISK ANALYSIS</p>
+    <h1>Attack Risk Scoring</h1>
+    <p class="muted">Each attack type is scored by packets-per-second &mdash; fast, high-volume attacks score higher risk.</p>
+    <div class="card">
+      <div class="card-head"><div><h3>Risk Ranking</h3><small>Computed from avg duration and avg packet count</small></div><span class="tag">SCORE</span></div>
+      <table style="width:100%; border-collapse:collapse;">
+        <thead>
+          <tr style="text-align:left; font-size:12px; color:#8892a6; border-bottom:1px solid #eef1f6;">
+            <th style="padding:10px 8px;">Attack Type</th>
+            <th style="padding:10px 8px;">Avg Duration (ms)</th>
+            <th style="padding:10px 8px;">Avg Packets</th>
+            <th style="padding:10px 8px;">Risk Score</th>
+            <th style="padding:10px 8px;">Level</th>
+          </tr>
+        </thead>
+        <tbody id="riskTable"></tbody>
+      </table>
+    </div>
+  </div>
+  <div class="page" id="page-sim">
+    <p class="eyebrow">SIMULATION</p>
+    <h1>Attack Simulator</h1>
+    <p class="muted">Replays a chosen attack type at real proportions of duration and packet volume.</p>
+    <div class="card">
+      <div style="display:flex; gap:12px; align-items:center; margin-bottom:20px; flex-wrap:wrap;">
+        <select id="simSelect" style="padding:10px 14px; border-radius:8px; border:1px solid #ddd; font-size:14px;"></select>
+        <button id="simRun" style="background:#3ea0ff; color:#fff; border:none; padding:10px 20px; border-radius:8px; font-size:14px; font-weight:600; cursor:pointer;">Run Simulation</button>
+        <span id="simIndicator" style="display:none; align-items:center; gap:6px; color:#ff6b6b; font-weight:600; font-size:13px;">
+          <span style="width:10px;height:10px;border-radius:50%;background:#ff6b6b;display:inline-block;animation:pulse 1s infinite;"></span>
+          Attack in progress
+        </span>
+      </div>
+      <div class="kpis">
+        <div class="kpi"><div class="icon" style="background:#e6f0ff;color:#3ea0ff;">⏱</div><div><b id="simTime">0 ms</b><span>Elapsed duration</span></div></div>
+        <div class="kpi"><div class="icon" style="background:#ffe9e9;color:#ff6b6b;">▤</div><div><b id="simPackets">0</b><span>Packets sent</span></div></div>
+        <div class="kpi"><div class="icon" style="background:#fff3e0;color:#fb923c;">%</div><div><b id="simProgress">0%</b><span>Simulation progress</span></div></div>
+      </div>
+      <div style="background:#eef1f6; border-radius:10px; height:14px; margin-top:10px; overflow:hidden;">
+        <div id="simBar" style="background:#3ea0ff; height:100%; width:0%; transition:width 0.1s linear;"></div>
+      </div>
+    </div>
+  </div>
+  <div class="page" id="page-upload">
+    <p class="eyebrow">DATA INGESTION</p>
+    <h1>Upload Dataset</h1>
+    <p class="muted">Drop in a CSV with similar network-flow columns to analyze it live, right in the browser.</p>
+    <div class="card">
+      <div id="dropZone" style="border:2px dashed #cbd5e1; border-radius:14px; padding:40px; text-align:center; cursor:pointer; background:#fafbfd;">
+        <div style="font-size:28px; margin-bottom:8px;">⬆</div>
+        <p style="font-weight:600;">Drop your CSV here</p>
+        <p class="muted" style="margin-bottom:14px;">or choose a file from your computer</p>
+        <input type="file" id="fileInput" accept=".csv" style="display:none;">
+        <button id="chooseBtn" style="background:#3ea0ff; color:#fff; border:none; padding:10px 20px; border-radius:8px; font-weight:600; cursor:pointer;">Choose CSV File</button>
+      </div>
+      <p id="uploadStatus" class="muted" style="margin-top:14px;"></p>
+    </div>
+
+    <div class="card" id="uploadResults" style="display:none;">
+      <div class="card-head"><div><h3>Upload Analysis</h3><small>Computed live from your file</small></div></div>
+      <div class="kpis" id="uploadKpis"></div>
+      <div style="overflow-x:auto; margin-top:16px;">
+        <table style="width:100%; border-collapse:collapse; font-size:14px;">
+          <thead><tr style="text-align:left; font-size:12px; color:#8892a6; border-bottom:1px solid #eef1f6;">
+            <th style="padding:8px;">Column</th><th style="padding:8px;">Sample Value</th>
+          </tr></thead>
+          <tbody id="uploadPreview"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+<script>
+document.querySelectorAll(".sidebar a").forEach(link => {
+  link.addEventListener("click", () => {
+    const oldPage = document.querySelector(".page.active");
+    if (oldPage) { oldPage.style.animation = "none"; }
+    document.querySelectorAll(".sidebar a").forEach(a => a.classList.remove("active"));
+    document.querySelectorAll(".page").forEach(p => p.classList.remove("active"));
+    link.classList.add("active");
+    document.getElementById("page-" + link.dataset.page).classList.add("active");
+    document.getElementById("pageTitle").textContent = link.textContent;
+  });
+});
+
+async function main() {
+  const res = await fetch("data.json");
+  const data = await res.json();
+
+  const k = data.kpis, c = data.cleaning;
+  document.getElementById("kpis").innerHTML = `
+    <div class="kpi"><div class="icon" style="background:#e6f0ff;color:#3ea0ff;">▣</div><div><b>${k.total_flows.toLocaleString()}</b><span>Total flows (cleaned)</span></div></div>
+    <div class="kpi"><div class="icon" style="background:#ffe9e9;color:#ff6b6b;">⚠</div><div><b>${k.attack_flows.toLocaleString()}</b><span>Attack flows</span></div></div>
+    <div class="kpi"><div class="icon" style="background:#e6faf3;color:#1a9c5b;">✓</div><div><b>${k.benign_flows.toLocaleString()}</b><span>Benign flows</span></div></div>
+    <div class="kpi"><div class="icon" style="background:#f3ecff;color:#a78bfa;">◆</div><div><b>${k.attack_types}</b><span>Attack types</span></div></div>
+    <div class="kpi"><div class="icon" style="background:#fff3e0;color:#fb923c;">⟳</div><div><b>${c.duplicates_removed.toLocaleString()}</b><span>Duplicates removed</span></div></div>
+  `;
+
+  document.getElementById("datasetStats").innerHTML = `
+    <div><span>Dataset name</span><b>CIC-IDS2017</b></div>
+    <div><span>Original source</span><b>Canadian Institute for Cybersecurity</b></div>
+    <div><span>File format</span><b>CSV / Parquet</b></div>
+    <div><span>Raw rows (before cleaning)</span><b>${c.raw_rows.toLocaleString()}</b></div>
+    <div><span>Duplicates removed</span><b>${c.duplicates_removed.toLocaleString()}</b></div>
+    <div><span>Missing/invalid rows removed</span><b>${c.missing_or_inf_removed.toLocaleString()}</b></div>
+    <div><span>Final clean rows</span><b>${c.final_rows.toLocaleString()}</b></div>
+    <div><span>Attack categories</span><b>${k.attack_types}</b></div>
+  `;
+
+  const palette = ["#3ea0ff","#2ee6c5","#ff6b6b","#ffd166","#a78bfa","#f472b6","#34d399","#fb923c","#60a5fa","#f87171","#4ade80","#c084fc","#facc15","#38bdf8"];
+
+  const labelEntries = Object.entries(data.labels).filter(([n]) => n !== "Benign");
+  new Chart(document.getElementById("chartLabels"), {
+    type: "bar",
+    data: { labels: labelEntries.map(e=>e[0]), datasets: [{ label: "Flows", data: labelEntries.map(e=>e[1]), backgroundColor: palette }] },
+    options: { indexAxis: "y", plugins: { legend: { display: false } } }
+  });
+
+  const protos = Object.keys(data.by_protocol);
+  const protoTotals = protos.map(p => Object.values(data.by_protocol[p]).reduce((a,b)=>a+b,0));
+  new Chart(document.getElementById("chartProtocol"), {
+    type: "doughnut",
+    data: { labels: protos, datasets: [{ data: protoTotals, backgroundColor: palette }] }
+  });
+
+  const days = Object.keys(data.by_day);
+  const attackLabels = labelEntries.map(e=>e[0]);
+  new Chart(document.getElementById("chartDay"), {
+    type: "bar",
+    data: { labels: days, datasets: attackLabels.map((lab,i) => ({ label: lab, data: days.map(d => data.by_day[d][lab] || 0), backgroundColor: palette[i % palette.length] })) },
+    options: { scales: { x: { stacked: true }, y: { stacked: true } } }
+  });
+
+  const durEntries = Object.entries(data.avg_duration).filter(([n]) => n !== "Benign");
+  new Chart(document.getElementById("chartDuration"), {
+    type: "bar",
+    data: { labels: durEntries.map(e=>e[0]), datasets: [{ label: "Avg Duration (ms)", data: durEntries.map(e=>e[1]), backgroundColor: "#3ea0ff" }] },
+    options: { plugins: { legend: { display: false } } }
+  });
+}
+function renderRisk(data) {
+  const durs = data.avg_duration, pkts = data.avg_packets;
+  const rows = Object.keys(durs).filter(n => n !== "Benign").map(name => {
+    const rate = pkts[name] / (Math.max(durs[name], 1) / 1000);
+    return { name, dur: durs[name], pkt: pkts[name], rate };
+  });
+  const rates = rows.map(r => r.rate);
+  const min = Math.min(...rates), max = Math.max(...rates);
+  rows.forEach(r => r.score = Math.round(((r.rate - min) / (max - min || 1)) * 100));
+  rows.sort((a, b) => b.score - a.score);
+
+  document.getElementById("riskTable").innerHTML = rows.map(r => {
+    const level = r.score > 66 ? ["High", "#ff6b6b", "#ffe9e9"] : r.score > 33 ? ["Medium", "#fb923c", "#fff3e0"] : ["Low", "#1a9c5b", "#e6faf3"];
+    return `<tr style="border-bottom:1px solid #f3f5f9;">
+      <td style="padding:10px 8px;">${r.name}</td>
+      <td style="padding:10px 8px;">${r.dur.toLocaleString()}</td>
+      <td style="padding:10px 8px;">${r.pkt}</td>
+      <td style="padding:10px 8px;">${r.score}</td>
+      <td style="padding:10px 8px;"><span style="background:${level[2]};color:${level[1]};padding:4px 10px;border-radius:20px;font-size:12px;font-weight:600;">${level[0]}</span></td>
+    </tr>`;
+  }).join("");
+}
+
+fetch("data.json").then(r => r.json()).then(renderRisk);
+
+main();
+
+document.getElementById("chooseBtn")?.addEventListener("click", () => document.getElementById("fileInput").click());
+document.getElementById("dropZone")?.addEventListener("dragover", e => e.preventDefault());
+document.getElementById("dropZone")?.addEventListener("drop", e => {
+  e.preventDefault();
+  if (e.dataTransfer.files.length) handleFile(e.dataTransfer.files[0]);
+});
+document.getElementById("fileInput")?.addEventListener("change", e => {
+  if (e.target.files.length) handleFile(e.target.files[0]);
+});
+
+function handleFile(file) {
+  document.getElementById("uploadStatus").textContent = "Parsing " + file.name + " ...";
+  Papa.parse(file, {
+    header: true,
+    skipEmptyLines: true,
+    complete: (result) => analyzeUpload(result.data, file.name)
+  });
+}
+
+function analyzeUpload(rows, filename) {
+  const total = rows.length;
+  const cols = rows.length ? Object.keys(rows[0]) : [];
+  const labelCol = cols.find(c => c.toLowerCase().includes("label"));
+  const protoCol = cols.find(c => c.toLowerCase().includes("protocol"));
+
+  let attackCount = 0, benignCount = 0, uniqueLabels = new Set();
+  if (labelCol) {
+    rows.forEach(r => {
+      const v = (r[labelCol] || "").trim();
+      if (v) uniqueLabels.add(v);
+      if (v.toLowerCase() === "benign") benignCount++; else if (v) attackCount++;
+    });
+  }
+
+  document.getElementById("uploadStatus").textContent = "Loaded: " + filename + " (" + total.toLocaleString() + " rows)";
+  document.getElementById("uploadResults").style.display = "block";
+  document.getElementById("uploadKpis").innerHTML = `
+    <div class="kpi"><div class="icon" style="background:#e6f0ff;color:#3ea0ff;">▣</div><div><b>${total.toLocaleString()}</b><span>Total rows</span></div></div>
+    <div class="kpi"><div class="icon" style="background:#ffe9e9;color:#ff6b6b;">⚠</div><div><b>${attackCount.toLocaleString()}</b><span>Attack rows</span></div></div>
+    <div class="kpi"><div class="icon" style="background:#e6faf3;color:#1a9c5b;">✓</div><div><b>${benignCount.toLocaleString()}</b><span>Benign rows</span></div></div>
+    <div class="kpi"><div class="icon" style="background:#f3ecff;color:#a78bfa;">◆</div><div><b>${uniqueLabels.size}</b><span>Unique labels found</span></div></div>
+  `;
+
+  document.getElementById("uploadPreview").innerHTML = cols.slice(0, 12).map(c =>
+    `<tr style="border-bottom:1px solid #f3f5f9;"><td style="padding:8px;">${c}</td><td style="padding:8px;">${rows[0][c] ?? ""}</td></tr>`
+  ).join("");
+}
+
+let ALL_RECORDS = [];
+fetch("data.json").then(r => r.json()).then(data => {
+  ALL_RECORDS = data.records || [];
+  const types = [...new Set(ALL_RECORDS.map(r => r.Label))].sort();
+  document.getElementById("recFilter").innerHTML += types.map(t => `<option value="${t}">${t}</option>`).join("");
+  renderRecords();
+});
+
+function renderRecords() {
+  const search = (document.getElementById("recSearch").value || "").toLowerCase();
+  const filter = document.getElementById("recFilter").value;
+  const rows = ALL_RECORDS.filter(r =>
+    (!filter || r.Label === filter) &&
+    (!search || r.Protocol.toLowerCase().includes(search) || r.Label.toLowerCase().includes(search))
+  ).slice(0, 100);
+
+  document.getElementById("recBody").innerHTML = rows.map(r => `
+    <tr style="border-bottom:1px solid #f3f5f9;">
+      <td style="padding:10px 8px;">${r.Day}</td>
+      <td style="padding:10px 8px;">${r.Protocol}</td>
+      <td style="padding:10px 8px;">${r.Packets}</td>
+      <td style="padding:10px 8px;">${Math.round(r.Duration).toLocaleString()}</td>
+      <td style="padding:10px 8px;">${r.Label}</td>
+    </tr>
+  `).join("");
+  document.getElementById("recCount").textContent = `Showing ${rows.length} of ${ALL_RECORDS.length} records`;
+}
+
+document.getElementById("recSearch")?.addEventListener("input", renderRecords);
+document.getElementById("recFilter")?.addEventListener("change", renderRecords);
+
+fetch("data.json").then(r => r.json()).then(data => {
+  const names = Object.keys(data.avg_duration).filter(n => n !== "Benign");
+  document.getElementById("simSelect").innerHTML = names.map(n => "<option value=\"" + n + "\">" + n + "</option>").join("");
+  window.SIM_DATA = data;
+});
+
+document.getElementById("simRun").addEventListener("click", () => {
+  const data = window.SIM_DATA;
+  if (!data) return;
+  const name = document.getElementById("simSelect").value;
+  const totalPackets = Math.round(data.avg_packets[name]);
+  const steps = 60;
+  let step = 0;
+  document.getElementById("simIndicator").style.display = "flex";
+  document.getElementById("simRun").disabled = true;
+  const stepTime = Math.min(data.avg_duration[name], 10000) / steps / 10;
+  const timer = setInterval(() => {
+    step++;
+    const pct = step / steps;
+    document.getElementById("simTime").textContent = Math.round(pct * data.avg_duration[name]).toLocaleString() + " ms";
+    document.getElementById("simPackets").textContent = Math.round(pct * totalPackets).toLocaleString();
+    document.getElementById("simProgress").textContent = Math.round(pct * 100) + "%";
+    document.getElementById("simBar").style.width = (pct * 100) + "%";
+    if (step >= steps) {
+      clearInterval(timer);
+      document.getElementById("simIndicator").style.display = "none";
+      document.getElementById("simRun").disabled = false;
+    }
+  }, stepTime);
+});
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

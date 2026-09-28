@@ -1,0 +1,2699 @@
+{
+  "kpis": {
+    "total_flows": 1467845,
+    "attack_flows": 323780,
+    "benign_flows": 1144065,
+    "attack_types": 14
+  },
+  "cleaning": {
+    "raw_rows": 2313810,
+    "missing_or_inf_removed": 0,
+    "duplicates_removed": 845965,
+    "final_rows": 1467845
+  },
+  "labels": {
+    "Benign": 1144065,
+    "DoS - Hulk": 164284,
+    "DDoS": 126937,
+    "DoS - GoldenEye": 10274,
+    "DoS - Slowhttptest": 5137,
+    "DoS - slowloris": 4857,
+    "FTP - Patator": 4254,
+    "SSH - Patator": 3146,
+    "PortScan": 1427,
+    "Web - Attack - Brute - Force": 1426,
+    "Bot": 1320,
+    "Web - Attack - XSS": 651,
+    "Infiltration": 36,
+    "Web - Attack - Sql - Injection": 20,
+    "Heartbleed": 11
+  },
+  "by_day": {
+    "Friday": {
+      "Benign": 226746,
+      "Bot": 1320,
+      "DDoS": 126937,
+      "DoS - GoldenEye": 0,
+      "DoS - Hulk": 0,
+      "DoS - Slowhttptest": 0,
+      "DoS - slowloris": 0,
+      "FTP - Patator": 0,
+      "Heartbleed": 0,
+      "Infiltration": 0,
+      "PortScan": 1427,
+      "SSH - Patator": 0,
+      "Web - Attack - Brute - Force": 0,
+      "Web - Attack - Sql - Injection": 0,
+      "Web - Attack - XSS": 0
+    },
+    "Monday": {
+      "Benign": 266116,
+      "Bot": 0,
+      "DDoS": 0,
+      "DoS - GoldenEye": 0,
+      "DoS - Hulk": 0,
+      "DoS - Slowhttptest": 0,
+      "DoS - slowloris": 0,
+      "FTP - Patator": 0,
+      "Heartbleed": 0,
+      "Infiltration": 0,
+      "PortScan": 0,
+      "SSH - Patator": 0,
+      "Web - Attack - Brute - Force": 0,
+      "Web - Attack - Sql - Injection": 0,
+      "Web - Attack - XSS": 0
+    },
+    "Thursday": {
+      "Benign": 202781,
+      "Bot": 0,
+      "DDoS": 0,
+      "DoS - GoldenEye": 0,
+      "DoS - Hulk": 0,
+      "DoS - Slowhttptest": 0,
+      "DoS - slowloris": 0,
+      "FTP - Patator": 0,
+      "Heartbleed": 0,
+      "Infiltration": 36,
+      "PortScan": 0,
+      "SSH - Patator": 0,
+      "Web - Attack - Brute - Force": 1426,
+      "Web - Attack - Sql - Injection": 20,
+      "Web - Attack - XSS": 651
+    },
+    "Tuesday": {
+      "Benign": 221936,
+      "Bot": 0,
+      "DDoS": 0,
+      "DoS - GoldenEye": 0,
+      "DoS - Hulk": 0,
+      "DoS - Slowhttptest": 0,
+      "DoS - slowloris": 0,
+      "FTP - Patator": 4254,
+      "Heartbleed": 0,
+      "Infiltration": 0,
+      "PortScan": 0,
+      "SSH - Patator": 3146,
+      "Web - Attack - Brute - Force": 0,
+      "Web - Attack - Sql - Injection": 0,
+      "Web - Attack - XSS": 0
+    },
+    "Wednesday": {
+      "Benign": 226486,
+      "Bot": 0,
+      "DDoS": 0,
+      "DoS - GoldenEye": 10274,
+      "DoS - Hulk": 164284,
+      "DoS - Slowhttptest": 5137,
+      "DoS - slowloris": 4857,
+      "FTP - Patator": 0,
+      "Heartbleed": 11,
+      "Infiltration": 0,
+      "PortScan": 0,
+      "SSH - Patator": 0,
+      "Web - Attack - Brute - Force": 0,
+      "Web - Attack - Sql - Injection": 0,
+      "Web - Attack - XSS": 0
+    }
+  },
+  "by_protocol": {
+    "HOPOPT": {
+      "Benign": 1572,
+      "Bot": 0,
+      "DDoS": 0,
+      "DoS - GoldenEye": 0,
+      "DoS - Hulk": 0,
+      "DoS - Slowhttptest": 0,
+      "DoS - slowloris": 0,
+      "FTP - Patator": 0,
+      "Heartbleed": 0,
+      "Infiltration": 0,
+      "PortScan": 6,
+      "SSH - Patator": 0,
+      "Web - Attack - Brute - Force": 0,
+      "Web - Attack - Sql - Injection": 0,
+      "Web - Attack - XSS": 0
+    },
+    "TCP": {
+      "Benign": 756138,
+      "Bot": 1320,
+      "DDoS": 126937,
+      "DoS - GoldenEye": 10274,
+      "DoS - Hulk": 164284,
+      "DoS - Slowhttptest": 5137,
+      "DoS - slowloris": 4857,
+      "FTP - Patator": 4254,
+      "Heartbleed": 11,
+      "Infiltration": 36,
+      "PortScan": 1420,
+      "SSH - Patator": 3146,
+      "Web - Attack - Brute - Force": 1426,
+      "Web - Attack - Sql - Injection": 20,
+      "Web - Attack - XSS": 651
+    },
+    "UDP": {
+      "Benign": 386355,
+      "Bot": 0,
+      "DDoS": 0,
+      "DoS - GoldenEye": 0,
+      "DoS - Hulk": 0,
+      "DoS - Slowhttptest": 0,
+      "DoS - slowloris": 0,
+      "FTP - Patator": 0,
+      "Heartbleed": 0,
+      "Infiltration": 0,
+      "PortScan": 1,
+      "SSH - Patator": 0,
+      "Web - Attack - Brute - Force": 0,
+      "Web - Attack - Sql - Injection": 0,
+      "Web - Attack - XSS": 0
+    }
+  },
+  "avg_duration": {
+    "Benign": 22229418.0,
+    "Bot": 512454.0,
+    "DDoS": 17074304.0,
+    "DoS - GoldenEye": 23134431.0,
+    "DoS - Hulk": 80056024.0,
+    "DoS - Slowhttptest": 61178018.0,
+    "DoS - slowloris": 64780720.0,
+    "FTP - Patator": 8415242.0,
+    "Heartbleed": 110679708.0,
+    "Infiltration": 78407720.0,
+    "PortScan": 9179749.0,
+    "SSH - Patator": 11555188.0,
+    "Web - Attack - Brute - Force": 6871650.0,
+    "Web - Attack - Sql - Injection": 3013915.0,
+    "Web - Attack - XSS": 6717272.0
+  },
+  "avg_packets": {
+    "Benign": 42.3,
+    "Bot": 8.7,
+    "DDoS": 7.7,
+    "DoS - GoldenEye": 9.6,
+    "DoS - Hulk": 12.3,
+    "DoS - Slowhttptest": 7.0,
+    "DoS - slowloris": 9.0,
+    "FTP - Patator": 22.5,
+    "Heartbleed": 4480.9,
+    "Infiltration": 1659.8,
+    "PortScan": 4.2,
+    "SSH - Patator": 50.1,
+    "Web - Attack - Brute - Force": 19.4,
+    "Web - Attack - Sql - Injection": 5.9,
+    "Web - Attack - XSS": 11.5
+  },
+  "records": [
+    {
+      "Day": "Monday",
+      "Protocol": "TCP",
+      "Packets": 26,
+      "Duration": 90260880,
+      "Label": "Benign"
+    },
+    {
+      "Day": "Tuesday",
+      "Protocol": "TCP",
+      "Packets": 98,
+      "Duration": 172771,
+      "Label": "Benign"
+    },
+    {
+      "Day": "Wednesday",
+      "Protocol": "TCP",
+      "Packets": 3,
+      "Duration": 1034,
+      "Label": "Benign"
+    },
+    {
+      "Day": "Thursday",
+      "Protocol": "TCP",
+      "Packets": 50,
+      "Duration": 119994716,
+      "Label": "Benign"
+    },
+    {
+      "Day": "Wednesday",
+      "Protocol": "TCP",
+      "Packets": 2,
+      "Duration": 2849,
+      "Label": "Benign"
+    },
+    {
+      "Day": "Monday",
+      "Protocol": "TCP",
+      "Packets": 3,
+      "Duration": 32101,
+      "Label": "Benign"
+    },
+    {
+      "Day": "Thursday",
+      "Protocol": "TCP",
+      "Packets": 7,
+      "Duration": 12541,
+      "Label": "Benign"
+    },
+    {
+      "Day": "Tuesday",
+      "Protocol": "TCP",
+      "Packets": 2,
+      "Duration": 11572,
+      "Label": "Benign"
+    },
+    {
+      "Day": "Thursday",
+      "Protocol": "UDP",
+      "Packets": 8,
+      "Duration": 43199,
+      "Label": "Benign"
+    },
+    {
+      "Day": "Friday",
+      "Protocol": "TCP",
+      "Packets": 46,
+      "Duration": 115716863,
+      "Label": "Benign"
+    },
+    {
+      "Day": "Wednesday",
+      "Protocol": "TCP",
+      "Packets": 2,
+      "Duration": 19993,
+      "Label": "Benign"
+    },
+    {
+      "Day": "Friday",
+      "Protocol": "TCP",
+      "Packets": 74,
+      "Duration": 116538431,
+      "Label": "Benign"
+    },
+    {
+      "Day": "Wednesday",
+      "Protocol": "UDP",
+      "Packets": 2,
+      "Duration": 68596,
+      "Label": "Benign"
+    },
+    {
+      "Day": "Friday",
+      "Protocol": "UDP",
+      "Packets": 6,
+      "Duration": 66702,
+      "Label": "Benign"
+    },
+    {
+      "Day": "Thursday",
+      "Protocol": "TCP",
+      "Packets": 88,
+      "Duration": 20699935,
+      "Label": "Benign"
+    },
+    {
+      "Day": "Thursday",
+      "Protocol": "TCP",
+      "Packets": 2,
+      "Duration": 211258,
+      "Label": "Benign"
+    },
+    {
+      "Day": "Tuesday",
+      "Protocol": "UDP",
+      "Packets": 4,
+      "Duration": 83980,
+      "Label": "Benign"
+    },
+    {
+      "Day": "Wednesday",
+      "Protocol": "TCP",
+      "Packets": 14,
+      "Duration": 324493,
+      "Label": "Benign"
+    },
+    {
+      "Day": "Tuesday",
+      "Protocol": "TCP",
+      "Packets": 15,
+      "Duration": 598177,
+      "Label": "Benign"
+    },
+    {
+      "Day": "Monday",
+      "Protocol": "TCP",
+      "Packets": 2,
+      "Duration": 14889,
+      "Label": "Benign"
+    },
+    {
+      "Day": "Friday",
+      "Protocol": "TCP",
+      "Packets": 6,
+      "Duration": 5099218,
+      "Label": "Benign"
+    },
+    {
+      "Day": "Wednesday",
+      "Protocol": "UDP",
+      "Packets": 4,
+      "Duration": 109127,
+      "Label": "Benign"
+    },
+    {
+      "Day": "Tuesday",
+      "Protocol": "UDP",
+      "Packets": 2,
+      "Duration": 61591,
+      "Label": "Benign"
+    },
+    {
+      "Day": "Wednesday",
+      "Protocol": "TCP",
+      "Packets": 4,
+      "Duration": 5216400,
+      "Label": "Benign"
+    },
+    {
+      "Day": "Thursday",
+      "Protocol": "TCP",
+      "Packets": 47,
+      "Duration": 119341620,
+      "Label": "Benign"
+    },
+    {
+      "Day": "Friday",
+      "Protocol": "TCP",
+      "Packets": 7,
+      "Duration": 70097,
+      "Label": "Bot"
+    },
+    {
+      "Day": "Friday",
+      "Protocol": "TCP",
+      "Packets": 7,
+      "Duration": 70712,
+      "Label": "Bot"
+    },
+    {
+      "Day": "Friday",
+      "Protocol": "TCP",
+      "Packets": 6,
+      "Duration": 1029535,
+      "Label": "Bot"
+    },
+    {
+      "Day": "Friday",
+      "Protocol": "TCP",
+      "Packets": 6,
+      "Duration": 1002499,
+      "Label": "Bot"
+    },
+    {
+      "Day": "Friday",
+      "Protocol": "TCP",
+      "Packets": 2,
+      "Duration": 93,
+      "Label": "Bot"
+    },
+    {
+      "Day": "Friday",
+      "Protocol": "TCP",
+      "Packets": 7,
+      "Duration": 71560,
+      "Label": "Bot"
+    },
+    {
+      "Day": "Friday",
+      "Protocol": "TCP",
+      "Packets": 7,
+      "Duration": 104121,
+      "Label": "Bot"
+    },
+    {
+      "Day": "Friday",
+      "Protocol": "TCP",
+      "Packets": 6,
+      "Duration": 1029326,
+      "Label": "Bot"
+    },
+    {
+      "Day": "Friday",
+      "Protocol": "TCP",
+      "Packets": 6,
+      "Duration": 1020237,
+      "Label": "Bot"
+    },
+    {
+      "Day": "Friday",
+      "Protocol": "TCP",
+      "Packets": 6,
+      "Duration": 1002195,
+      "Label": "Bot"
+    },
+    {
+      "Day": "Friday",
+      "Protocol": "TCP",
+      "Packets": 6,
+      "Duration": 1000555,
+      "Label": "Bot"
+    },
+    {
+      "Day": "Friday",
+      "Protocol": "TCP",
+      "Packets": 7,
+      "Duration": 94464,
+      "Label": "Bot"
+    },
+    {
+      "Day": "Friday",
+      "Protocol": "TCP",
+      "Packets": 6,
+      "Duration": 1018221,
+      "Label": "Bot"
+    },
+    {
+      "Day": "Friday",
+      "Protocol": "TCP",
+      "Packets": 7,
+      "Duration": 81495,
+      "Label": "Bot"
+    },
+    {
+      "Day": "Friday",
+      "Protocol": "TCP",
+      "Packets": 7,
+      "Duration": 65398,
+      "Label": "Bot"
+    },
+    {
+      "Day": "Friday",
+      "Protocol": "TCP",
+      "Packets": 7,
+      "Duration": 64865,
+      "Label": "Bot"
+    },
+    {
+      "Day": "Friday",
+      "Protocol": "TCP",
+      "Packets": 2,
+      "Duration": 37,
+      "Label": "Bot"
+    },
+    {
+      "Day": "Friday",
+      "Protocol": "TCP",
+      "Packets": 7,
+      "Duration": 65479,
+      "Label": "Bot"
+    },
+    {
+      "Day": "Friday",
+      "Protocol": "TCP",
+      "Packets": 6,
+      "Duration": 1024853,
+      "Label": "Bot"
+    },
+    {
+      "Day": "Friday",
+      "Protocol": "TCP",
+      "Packets": 9,
+      "Duration": 214040,
+      "Label": "Bot"
+    },
+    {
+      "Day": "Friday",
+      "Protocol": "TCP",
+      "Packets": 52,
+      "Duration": 86644,
+      "Label": "Bot"
+    },
+    {
+      "Day": "Friday",
+      "Protocol": "TCP",
+      "Packets": 7,
+      "Duration": 77554,
+      "Label": "Bot"
+    },
+    {
+      "Day": "Friday",
+      "Protocol": "TCP",
+      "Packets": 7,
+      "Duration": 71501,
+      "Label": "Bot"
+    },
+    {
+      "Day": "Friday",
+      "Protocol": "TCP",
+      "Packets": 6,
+      "Duration": 1030281,
+      "Label": "Bot"
+    },
+    {
+      "Day": "Friday",
+      "Protocol": "TCP",
+      "Packets": 7,
+      "Duration": 59347,
+      "Label": "Bot"
+    },
+    {
+      "Day": "Friday",
+      "Protocol": "TCP",
+      "Packets": 8,
+      "Duration": 31925,
+      "Label": "DDoS"
+    },
+    {
+      "Day": "Friday",
+      "Protocol": "TCP",
+      "Packets": 6,
+      "Duration": 7955913,
+      "Label": "DDoS"
+    },
+    {
+      "Day": "Friday",
+      "Protocol": "TCP",
+      "Packets": 8,
+      "Duration": 1449301,
+      "Label": "DDoS"
+    },
+    {
+      "Day": "Friday",
+      "Protocol": "TCP",
+      "Packets": 4,
+      "Duration": 4751893,
+      "Label": "DDoS"
+    },
+    {
+      "Day": "Friday",
+      "Protocol": "TCP",
+      "Packets": 13,
+      "Duration": 78429917,
+      "Label": "DDoS"
+    },
+    {
+      "Day": "Friday",
+      "Protocol": "TCP",
+      "Packets": 8,
+      "Duration": 930277,
+      "Label": "DDoS"
+    },
+    {
+      "Day": "Friday",
+      "Protocol": "TCP",
+      "Packets": 8,
+      "Duration": 560207,
+      "Label": "DDoS"
+    },
+    {
+      "Day": "Friday",
+      "Protocol": "TCP",
+      "Packets": 9,
+      "Duration": 1772193,
+      "Label": "DDoS"
+    },
+    {
+      "Day": "Friday",
+      "Protocol": "TCP",
+      "Packets": 6,
+      "Duration": 855648,
+      "Label": "DDoS"
+    },
+    {
+      "Day": "Friday",
+      "Protocol": "TCP",
+      "Packets": 9,
+      "Duration": 821894,
+      "Label": "DDoS"
+    },
+    {
+      "Day": "Friday",
+      "Protocol": "TCP",
+      "Packets": 5,
+      "Duration": 9990749,
+      "Label": "DDoS"
+    },
+    {
+      "Day": "Friday",
+      "Protocol": "TCP",
+      "Packets": 5,
+      "Duration": 1031163,
+      "Label": "DDoS"
+    },
+    {
+      "Day": "Friday",
+      "Protocol": "TCP",
+      "Packets": 4,
+      "Duration": 4109390,
+      "Label": "DDoS"
+    },
+    {
+      "Day": "Friday",
+      "Protocol": "TCP",
+      "Packets": 4,
+      "Duration": 12183657,
+      "Label": "DDoS"
+    },
+    {
+      "Day": "Friday",
+      "Protocol": "TCP",
+      "Packets": 5,
+      "Duration": 7816817,
+      "Label": "DDoS"
+    },
+    {
+      "Day": "Friday",
+      "Protocol": "TCP",
+      "Packets": 7,
+      "Duration": 560935,
+      "Label": "DDoS"
+    },
+    {
+      "Day": "Friday",
+      "Protocol": "TCP",
+      "Packets": 14,
+      "Duration": 78334896,
+      "Label": "DDoS"
+    },
+    {
+      "Day": "Friday",
+      "Protocol": "TCP",
+      "Packets": 8,
+      "Duration": 234135,
+      "Label": "DDoS"
+    },
+    {
+      "Day": "Friday",
+      "Protocol": "TCP",
+      "Packets": 13,
+      "Duration": 98977595,
+      "Label": "DDoS"
+    },
+    {
+      "Day": "Friday",
+      "Protocol": "TCP",
+      "Packets": 9,
+      "Duration": 696989,
+      "Label": "DDoS"
+    },
+    {
+      "Day": "Friday",
+      "Protocol": "TCP",
+      "Packets": 8,
+      "Duration": 1805264,
+      "Label": "DDoS"
+    },
+    {
+      "Day": "Friday",
+      "Protocol": "TCP",
+      "Packets": 4,
+      "Duration": 9219766,
+      "Label": "DDoS"
+    },
+    {
+      "Day": "Friday",
+      "Protocol": "TCP",
+      "Packets": 4,
+      "Duration": 11919890,
+      "Label": "DDoS"
+    },
+    {
+      "Day": "Friday",
+      "Protocol": "TCP",
+      "Packets": 14,
+      "Duration": 78369830,
+      "Label": "DDoS"
+    },
+    {
+      "Day": "Friday",
+      "Protocol": "TCP",
+      "Packets": 4,
+      "Duration": 5885853,
+      "Label": "DDoS"
+    },
+    {
+      "Day": "Wednesday",
+      "Protocol": "TCP",
+      "Packets": 2,
+      "Duration": 29992034,
+      "Label": "DoS - GoldenEye"
+    },
+    {
+      "Day": "Wednesday",
+      "Protocol": "TCP",
+      "Packets": 15,
+      "Duration": 5008207,
+      "Label": "DoS - GoldenEye"
+    },
+    {
+      "Day": "Wednesday",
+      "Protocol": "TCP",
+      "Packets": 14,
+      "Duration": 14586321,
+      "Label": "DoS - GoldenEye"
+    },
+    {
+      "Day": "Wednesday",
+      "Protocol": "TCP",
+      "Packets": 2,
+      "Duration": 28122873,
+      "Label": "DoS - GoldenEye"
+    },
+    {
+      "Day": "Wednesday",
+      "Protocol": "TCP",
+      "Packets": 2,
+      "Duration": 36147131,
+      "Label": "DoS - GoldenEye"
+    },
+    {
+      "Day": "Wednesday",
+      "Protocol": "TCP",
+      "Packets": 2,
+      "Duration": 20181863,
+      "Label": "DoS - GoldenEye"
+    },
+    {
+      "Day": "Wednesday",
+      "Protocol": "TCP",
+      "Packets": 13,
+      "Duration": 11758872,
+      "Label": "DoS - GoldenEye"
+    },
+    {
+      "Day": "Wednesday",
+      "Protocol": "TCP",
+      "Packets": 2,
+      "Duration": 85338240,
+      "Label": "DoS - GoldenEye"
+    },
+    {
+      "Day": "Wednesday",
+      "Protocol": "TCP",
+      "Packets": 13,
+      "Duration": 10441828,
+      "Label": "DoS - GoldenEye"
+    },
+    {
+      "Day": "Wednesday",
+      "Protocol": "TCP",
+      "Packets": 13,
+      "Duration": 10728001,
+      "Label": "DoS - GoldenEye"
+    },
+    {
+      "Day": "Wednesday",
+      "Protocol": "TCP",
+      "Packets": 13,
+      "Duration": 10021868,
+      "Label": "DoS - GoldenEye"
+    },
+    {
+      "Day": "Wednesday",
+      "Protocol": "TCP",
+      "Packets": 10,
+      "Duration": 10405475,
+      "Label": "DoS - GoldenEye"
+    },
+    {
+      "Day": "Wednesday",
+      "Protocol": "TCP",
+      "Packets": 15,
+      "Duration": 11632576,
+      "Label": "DoS - GoldenEye"
+    },
+    {
+      "Day": "Wednesday",
+      "Protocol": "TCP",
+      "Packets": 2,
+      "Duration": 108888517,
+      "Label": "DoS - GoldenEye"
+    },
+    {
+      "Day": "Wednesday",
+      "Protocol": "TCP",
+      "Packets": 12,
+      "Duration": 11706139,
+      "Label": "DoS - GoldenEye"
+    },
+    {
+      "Day": "Wednesday",
+      "Protocol": "TCP",
+      "Packets": 10,
+      "Duration": 5011126,
+      "Label": "DoS - GoldenEye"
+    },
+    {
+      "Day": "Wednesday",
+      "Protocol": "TCP",
+      "Packets": 15,
+      "Duration": 10067769,
+      "Label": "DoS - GoldenEye"
+    },
+    {
+      "Day": "Wednesday",
+      "Protocol": "TCP",
+      "Packets": 14,
+      "Duration": 15557813,
+      "Label": "DoS - GoldenEye"
+    },
+    {
+      "Day": "Wednesday",
+      "Protocol": "TCP",
+      "Packets": 9,
+      "Duration": 11963673,
+      "Label": "DoS - GoldenEye"
+    },
+    {
+      "Day": "Wednesday",
+      "Protocol": "TCP",
+      "Packets": 13,
+      "Duration": 11589968,
+      "Label": "DoS - GoldenEye"
+    },
+    {
+      "Day": "Wednesday",
+      "Protocol": "TCP",
+      "Packets": 13,
+      "Duration": 10579324,
+      "Label": "DoS - GoldenEye"
+    },
+    {
+      "Day": "Wednesday",
+      "Protocol": "TCP",
+      "Packets": 15,
+      "Duration": 9786168,
+      "Label": "DoS - GoldenEye"
+    },
+    {
+      "Day": "Wednesday",
+      "Protocol": "TCP",
+      "Packets": 14,
+      "Duration": 5004788,
+      "Label": "DoS - GoldenEye"
+    },
+    {
+      "Day": "Wednesday",
+      "Protocol": "TCP",
+      "Packets": 14,
+      "Duration": 9462454,
+      "Label": "DoS - GoldenEye"
+    },
+    {
+      "Day": "Wednesday",
+      "Protocol": "TCP",
+      "Packets": 10,
+      "Duration": 11841577,
+      "Label": "DoS - GoldenEye"
+    },
+    {
+      "Day": "Wednesday",
+      "Protocol": "TCP",
+      "Packets": 13,
+      "Duration": 99422640,
+      "Label": "DoS - Hulk"
+    },
+    {
+      "Day": "Wednesday",
+      "Protocol": "TCP",
+      "Packets": 13,
+      "Duration": 100211835,
+      "Label": "DoS - Hulk"
+    },
+    {
+      "Day": "Wednesday",
+      "Protocol": "TCP",
+      "Packets": 12,
+      "Duration": 86143443,
+      "Label": "DoS - Hulk"
+    },
+    {
+      "Day": "Wednesday",
+      "Protocol": "TCP",
+      "Packets": 15,
+      "Duration": 84610387,
+      "Label": "DoS - Hulk"
+    },
+    {
+      "Day": "Wednesday",
+      "Protocol": "TCP",
+      "Packets": 12,
+      "Duration": 99190055,
+      "Label": "DoS - Hulk"
+    },
+    {
+      "Day": "Wednesday",
+      "Protocol": "TCP",
+      "Packets": 12,
+      "Duration": 98794796,
+      "Label": "DoS - Hulk"
+    },
+    {
+      "Day": "Wednesday",
+      "Protocol": "TCP",
+      "Packets": 13,
+      "Duration": 99727666,
+      "Label": "DoS - Hulk"
+    },
+    {
+      "Day": "Wednesday",
+      "Protocol": "TCP",
+      "Packets": 13,
+      "Duration": 98276651,
+      "Label": "DoS - Hulk"
+    },
+    {
+      "Day": "Wednesday",
+      "Protocol": "TCP",
+      "Packets": 13,
+      "Duration": 98641459,
+      "Label": "DoS - Hulk"
+    },
+    {
+      "Day": "Wednesday",
+      "Protocol": "TCP",
+      "Packets": 14,
+      "Duration": 101218654,
+      "Label": "DoS - Hulk"
+    },
+    {
+      "Day": "Wednesday",
+      "Protocol": "TCP",
+      "Packets": 12,
+      "Duration": 84699123,
+      "Label": "DoS - Hulk"
+    },
+    {
+      "Day": "Wednesday",
+      "Protocol": "TCP",
+      "Packets": 13,
+      "Duration": 85167220,
+      "Label": "DoS - Hulk"
+    },
+    {
+      "Day": "Wednesday",
+      "Protocol": "TCP",
+      "Packets": 11,
+      "Duration": 571484,
+      "Label": "DoS - Hulk"
+    },
+    {
+      "Day": "Wednesday",
+      "Protocol": "TCP",
+      "Packets": 12,
+      "Duration": 85206069,
+      "Label": "DoS - Hulk"
+    },
+    {
+      "Day": "Wednesday",
+      "Protocol": "TCP",
+      "Packets": 15,
+      "Duration": 85865120,
+      "Label": "DoS - Hulk"
+    },
+    {
+      "Day": "Wednesday",
+      "Protocol": "TCP",
+      "Packets": 14,
+      "Duration": 100252803,
+      "Label": "DoS - Hulk"
+    },
+    {
+      "Day": "Wednesday",
+      "Protocol": "TCP",
+      "Packets": 16,
+      "Duration": 85644233,
+      "Label": "DoS - Hulk"
+    },
+    {
+      "Day": "Wednesday",
+      "Protocol": "TCP",
+      "Packets": 13,
+      "Duration": 98626680,
+      "Label": "DoS - Hulk"
+    },
+    {
+      "Day": "Wednesday",
+      "Protocol": "TCP",
+      "Packets": 13,
+      "Duration": 85479124,
+      "Label": "DoS - Hulk"
+    },
+    {
+      "Day": "Wednesday",
+      "Protocol": "TCP",
+      "Packets": 4,
+      "Duration": 19777,
+      "Label": "DoS - Hulk"
+    },
+    {
+      "Day": "Wednesday",
+      "Protocol": "TCP",
+      "Packets": 18,
+      "Duration": 101675440,
+      "Label": "DoS - Hulk"
+    },
+    {
+      "Day": "Wednesday",
+      "Protocol": "TCP",
+      "Packets": 5,
+      "Duration": 7253,
+      "Label": "DoS - Hulk"
+    },
+    {
+      "Day": "Wednesday",
+      "Protocol": "TCP",
+      "Packets": 13,
+      "Duration": 82209097,
+      "Label": "DoS - Hulk"
+    },
+    {
+      "Day": "Wednesday",
+      "Protocol": "TCP",
+      "Packets": 12,
+      "Duration": 98973857,
+      "Label": "DoS - Hulk"
+    },
+    {
+      "Day": "Wednesday",
+      "Protocol": "TCP",
+      "Packets": 13,
+      "Duration": 85534525,
+      "Label": "DoS - Hulk"
+    },
+    {
+      "Day": "Wednesday",
+      "Protocol": "TCP",
+      "Packets": 7,
+      "Duration": 109999146,
+      "Label": "DoS - Slowhttptest"
+    },
+    {
+      "Day": "Wednesday",
+      "Protocol": "TCP",
+      "Packets": 10,
+      "Duration": 108198473,
+      "Label": "DoS - Slowhttptest"
+    },
+    {
+      "Day": "Wednesday",
+      "Protocol": "TCP",
+      "Packets": 7,
+      "Duration": 63138225,
+      "Label": "DoS - Slowhttptest"
+    },
+    {
+      "Day": "Wednesday",
+      "Protocol": "TCP",
+      "Packets": 7,
+      "Duration": 63089620,
+      "Label": "DoS - Slowhttptest"
+    },
+    {
+      "Day": "Wednesday",
+      "Protocol": "TCP",
+      "Packets": 7,
+      "Duration": 63086050,
+      "Label": "DoS - Slowhttptest"
+    },
+    {
+      "Day": "Wednesday",
+      "Protocol": "TCP",
+      "Packets": 3,
+      "Duration": 20997657,
+      "Label": "DoS - Slowhttptest"
+    },
+    {
+      "Day": "Wednesday",
+      "Protocol": "TCP",
+      "Packets": 9,
+      "Duration": 108633325,
+      "Label": "DoS - Slowhttptest"
+    },
+    {
+      "Day": "Wednesday",
+      "Protocol": "TCP",
+      "Packets": 7,
+      "Duration": 63141040,
+      "Label": "DoS - Slowhttptest"
+    },
+    {
+      "Day": "Wednesday",
+      "Protocol": "TCP",
+      "Packets": 7,
+      "Duration": 109421474,
+      "Label": "DoS - Slowhttptest"
+    },
+    {
+      "Day": "Wednesday",
+      "Protocol": "TCP",
+      "Packets": 3,
+      "Duration": 3002796,
+      "Label": "DoS - Slowhttptest"
+    },
+    {
+      "Day": "Wednesday",
+      "Protocol": "TCP",
+      "Packets": 7,
+      "Duration": 63104980,
+      "Label": "DoS - Slowhttptest"
+    },
+    {
+      "Day": "Wednesday",
+      "Protocol": "TCP",
+      "Packets": 7,
+      "Duration": 109873762,
+      "Label": "DoS - Slowhttptest"
+    },
+    {
+      "Day": "Wednesday",
+      "Protocol": "TCP",
+      "Packets": 3,
+      "Duration": 42063,
+      "Label": "DoS - Slowhttptest"
+    },
+    {
+      "Day": "Wednesday",
+      "Protocol": "TCP",
+      "Packets": 7,
+      "Duration": 63156162,
+      "Label": "DoS - Slowhttptest"
+    },
+    {
+      "Day": "Wednesday",
+      "Protocol": "TCP",
+      "Packets": 3,
+      "Duration": 2688,
+      "Label": "DoS - Slowhttptest"
+    },
+    {
+      "Day": "Wednesday",
+      "Protocol": "TCP",
+      "Packets": 3,
+      "Duration": 2775,
+      "Label": "DoS - Slowhttptest"
+    },
+    {
+      "Day": "Wednesday",
+      "Protocol": "TCP",
+      "Packets": 2,
+      "Duration": 816146,
+      "Label": "DoS - Slowhttptest"
+    },
+    {
+      "Day": "Wednesday",
+      "Protocol": "TCP",
+      "Packets": 7,
+      "Duration": 63091035,
+      "Label": "DoS - Slowhttptest"
+    },
+    {
+      "Day": "Wednesday",
+      "Protocol": "TCP",
+      "Packets": 7,
+      "Duration": 63119321,
+      "Label": "DoS - Slowhttptest"
+    },
+    {
+      "Day": "Wednesday",
+      "Protocol": "TCP",
+      "Packets": 7,
+      "Duration": 63139840,
+      "Label": "DoS - Slowhttptest"
+    },
+    {
+      "Day": "Wednesday",
+      "Protocol": "TCP",
+      "Packets": 7,
+      "Duration": 63111002,
+      "Label": "DoS - Slowhttptest"
+    },
+    {
+      "Day": "Wednesday",
+      "Protocol": "TCP",
+      "Packets": 12,
+      "Duration": 7618859,
+      "Label": "DoS - Slowhttptest"
+    },
+    {
+      "Day": "Wednesday",
+      "Protocol": "TCP",
+      "Packets": 7,
+      "Duration": 63085340,
+      "Label": "DoS - Slowhttptest"
+    },
+    {
+      "Day": "Wednesday",
+      "Protocol": "TCP",
+      "Packets": 7,
+      "Duration": 63124872,
+      "Label": "DoS - Slowhttptest"
+    },
+    {
+      "Day": "Wednesday",
+      "Protocol": "TCP",
+      "Packets": 10,
+      "Duration": 109255475,
+      "Label": "DoS - Slowhttptest"
+    },
+    {
+      "Day": "Wednesday",
+      "Protocol": "TCP",
+      "Packets": 18,
+      "Duration": 103593487,
+      "Label": "DoS - slowloris"
+    },
+    {
+      "Day": "Wednesday",
+      "Protocol": "TCP",
+      "Packets": 3,
+      "Duration": 3003925,
+      "Label": "DoS - slowloris"
+    },
+    {
+      "Day": "Wednesday",
+      "Protocol": "TCP",
+      "Packets": 17,
+      "Duration": 102604276,
+      "Label": "DoS - slowloris"
+    },
+    {
+      "Day": "Wednesday",
+      "Protocol": "TCP",
+      "Packets": 18,
+      "Duration": 103617933,
+      "Label": "DoS - slowloris"
+    },
+    {
+      "Day": "Wednesday",
+      "Protocol": "TCP",
+      "Packets": 3,
+      "Duration": 3003839,
+      "Label": "DoS - slowloris"
+    },
+    {
+      "Day": "Wednesday",
+      "Protocol": "TCP",
+      "Packets": 3,
+      "Duration": 3000181,
+      "Label": "DoS - slowloris"
+    },
+    {
+      "Day": "Wednesday",
+      "Protocol": "TCP",
+      "Packets": 3,
+      "Duration": 94649773,
+      "Label": "DoS - slowloris"
+    },
+    {
+      "Day": "Wednesday",
+      "Protocol": "TCP",
+      "Packets": 4,
+      "Duration": 101000106,
+      "Label": "DoS - slowloris"
+    },
+    {
+      "Day": "Wednesday",
+      "Protocol": "TCP",
+      "Packets": 4,
+      "Duration": 99999362,
+      "Label": "DoS - slowloris"
+    },
+    {
+      "Day": "Wednesday",
+      "Protocol": "TCP",
+      "Packets": 4,
+      "Duration": 119016184,
+      "Label": "DoS - slowloris"
+    },
+    {
+      "Day": "Wednesday",
+      "Protocol": "TCP",
+      "Packets": 7,
+      "Duration": 107108480,
+      "Label": "DoS - slowloris"
+    },
+    {
+      "Day": "Wednesday",
+      "Protocol": "TCP",
+      "Packets": 3,
+      "Duration": 3001634,
+      "Label": "DoS - slowloris"
+    },
+    {
+      "Day": "Wednesday",
+      "Protocol": "TCP",
+      "Packets": 3,
+      "Duration": 3003082,
+      "Label": "DoS - slowloris"
+    },
+    {
+      "Day": "Wednesday",
+      "Protocol": "TCP",
+      "Packets": 17,
+      "Duration": 102591511,
+      "Label": "DoS - slowloris"
+    },
+    {
+      "Day": "Wednesday",
+      "Protocol": "TCP",
+      "Packets": 3,
+      "Duration": 3003658,
+      "Label": "DoS - slowloris"
+    },
+    {
+      "Day": "Wednesday",
+      "Protocol": "TCP",
+      "Packets": 17,
+      "Duration": 102628547,
+      "Label": "DoS - slowloris"
+    },
+    {
+      "Day": "Wednesday",
+      "Protocol": "TCP",
+      "Packets": 3,
+      "Duration": 3002790,
+      "Label": "DoS - slowloris"
+    },
+    {
+      "Day": "Wednesday",
+      "Protocol": "TCP",
+      "Packets": 4,
+      "Duration": 99999209,
+      "Label": "DoS - slowloris"
+    },
+    {
+      "Day": "Wednesday",
+      "Protocol": "TCP",
+      "Packets": 18,
+      "Duration": 103649795,
+      "Label": "DoS - slowloris"
+    },
+    {
+      "Day": "Wednesday",
+      "Protocol": "TCP",
+      "Packets": 17,
+      "Duration": 102661662,
+      "Label": "DoS - slowloris"
+    },
+    {
+      "Day": "Wednesday",
+      "Protocol": "TCP",
+      "Packets": 19,
+      "Duration": 105658043,
+      "Label": "DoS - slowloris"
+    },
+    {
+      "Day": "Wednesday",
+      "Protocol": "TCP",
+      "Packets": 17,
+      "Duration": 102722765,
+      "Label": "DoS - slowloris"
+    },
+    {
+      "Day": "Wednesday",
+      "Protocol": "TCP",
+      "Packets": 19,
+      "Duration": 105638843,
+      "Label": "DoS - slowloris"
+    },
+    {
+      "Day": "Wednesday",
+      "Protocol": "TCP",
+      "Packets": 17,
+      "Duration": 35415287,
+      "Label": "DoS - slowloris"
+    },
+    {
+      "Day": "Wednesday",
+      "Protocol": "TCP",
+      "Packets": 19,
+      "Duration": 105617648,
+      "Label": "DoS - slowloris"
+    },
+    {
+      "Day": "Tuesday",
+      "Protocol": "TCP",
+      "Packets": 24,
+      "Duration": 8742628,
+      "Label": "FTP - Patator"
+    },
+    {
+      "Day": "Tuesday",
+      "Protocol": "TCP",
+      "Packets": 24,
+      "Duration": 9355520,
+      "Label": "FTP - Patator"
+    },
+    {
+      "Day": "Tuesday",
+      "Protocol": "TCP",
+      "Packets": 24,
+      "Duration": 8284832,
+      "Label": "FTP - Patator"
+    },
+    {
+      "Day": "Tuesday",
+      "Protocol": "TCP",
+      "Packets": 24,
+      "Duration": 8773831,
+      "Label": "FTP - Patator"
+    },
+    {
+      "Day": "Tuesday",
+      "Protocol": "TCP",
+      "Packets": 24,
+      "Duration": 9007445,
+      "Label": "FTP - Patator"
+    },
+    {
+      "Day": "Tuesday",
+      "Protocol": "TCP",
+      "Packets": 24,
+      "Duration": 9910609,
+      "Label": "FTP - Patator"
+    },
+    {
+      "Day": "Tuesday",
+      "Protocol": "TCP",
+      "Packets": 24,
+      "Duration": 9279408,
+      "Label": "FTP - Patator"
+    },
+    {
+      "Day": "Tuesday",
+      "Protocol": "TCP",
+      "Packets": 24,
+      "Duration": 8979137,
+      "Label": "FTP - Patator"
+    },
+    {
+      "Day": "Tuesday",
+      "Protocol": "TCP",
+      "Packets": 24,
+      "Duration": 9091401,
+      "Label": "FTP - Patator"
+    },
+    {
+      "Day": "Tuesday",
+      "Protocol": "TCP",
+      "Packets": 4,
+      "Duration": 311,
+      "Label": "FTP - Patator"
+    },
+    {
+      "Day": "Tuesday",
+      "Protocol": "TCP",
+      "Packets": 24,
+      "Duration": 9358966,
+      "Label": "FTP - Patator"
+    },
+    {
+      "Day": "Tuesday",
+      "Protocol": "TCP",
+      "Packets": 24,
+      "Duration": 9443071,
+      "Label": "FTP - Patator"
+    },
+    {
+      "Day": "Tuesday",
+      "Protocol": "TCP",
+      "Packets": 24,
+      "Duration": 9486815,
+      "Label": "FTP - Patator"
+    },
+    {
+      "Day": "Tuesday",
+      "Protocol": "TCP",
+      "Packets": 24,
+      "Duration": 8788380,
+      "Label": "FTP - Patator"
+    },
+    {
+      "Day": "Tuesday",
+      "Protocol": "TCP",
+      "Packets": 24,
+      "Duration": 8670733,
+      "Label": "FTP - Patator"
+    },
+    {
+      "Day": "Tuesday",
+      "Protocol": "TCP",
+      "Packets": 24,
+      "Duration": 8917294,
+      "Label": "FTP - Patator"
+    },
+    {
+      "Day": "Tuesday",
+      "Protocol": "TCP",
+      "Packets": 24,
+      "Duration": 8994522,
+      "Label": "FTP - Patator"
+    },
+    {
+      "Day": "Tuesday",
+      "Protocol": "TCP",
+      "Packets": 24,
+      "Duration": 9807057,
+      "Label": "FTP - Patator"
+    },
+    {
+      "Day": "Tuesday",
+      "Protocol": "TCP",
+      "Packets": 24,
+      "Duration": 8691597,
+      "Label": "FTP - Patator"
+    },
+    {
+      "Day": "Tuesday",
+      "Protocol": "TCP",
+      "Packets": 24,
+      "Duration": 8950934,
+      "Label": "FTP - Patator"
+    },
+    {
+      "Day": "Tuesday",
+      "Protocol": "TCP",
+      "Packets": 24,
+      "Duration": 9090300,
+      "Label": "FTP - Patator"
+    },
+    {
+      "Day": "Tuesday",
+      "Protocol": "TCP",
+      "Packets": 24,
+      "Duration": 8092533,
+      "Label": "FTP - Patator"
+    },
+    {
+      "Day": "Tuesday",
+      "Protocol": "TCP",
+      "Packets": 24,
+      "Duration": 8582811,
+      "Label": "FTP - Patator"
+    },
+    {
+      "Day": "Tuesday",
+      "Protocol": "TCP",
+      "Packets": 24,
+      "Duration": 8754233,
+      "Label": "FTP - Patator"
+    },
+    {
+      "Day": "Tuesday",
+      "Protocol": "TCP",
+      "Packets": 24,
+      "Duration": 10043778,
+      "Label": "FTP - Patator"
+    },
+    {
+      "Day": "Wednesday",
+      "Protocol": "TCP",
+      "Packets": 4924,
+      "Duration": 119261118,
+      "Label": "Heartbleed"
+    },
+    {
+      "Day": "Wednesday",
+      "Protocol": "TCP",
+      "Packets": 4905,
+      "Duration": 119260295,
+      "Label": "Heartbleed"
+    },
+    {
+      "Day": "Wednesday",
+      "Protocol": "TCP",
+      "Packets": 4871,
+      "Duration": 119297996,
+      "Label": "Heartbleed"
+    },
+    {
+      "Day": "Wednesday",
+      "Protocol": "TCP",
+      "Packets": 4803,
+      "Duration": 119296592,
+      "Label": "Heartbleed"
+    },
+    {
+      "Day": "Wednesday",
+      "Protocol": "TCP",
+      "Packets": 4902,
+      "Duration": 119262215,
+      "Label": "Heartbleed"
+    },
+    {
+      "Day": "Wednesday",
+      "Protocol": "TCP",
+      "Packets": 4870,
+      "Duration": 119259012,
+      "Label": "Heartbleed"
+    },
+    {
+      "Day": "Wednesday",
+      "Protocol": "TCP",
+      "Packets": 4414,
+      "Duration": 119302728,
+      "Label": "Heartbleed"
+    },
+    {
+      "Day": "Wednesday",
+      "Protocol": "TCP",
+      "Packets": 4869,
+      "Duration": 119257653,
+      "Label": "Heartbleed"
+    },
+    {
+      "Day": "Wednesday",
+      "Protocol": "TCP",
+      "Packets": 1026,
+      "Duration": 24719667,
+      "Label": "Heartbleed"
+    },
+    {
+      "Day": "Wednesday",
+      "Protocol": "TCP",
+      "Packets": 4833,
+      "Duration": 119299621,
+      "Label": "Heartbleed"
+    },
+    {
+      "Day": "Wednesday",
+      "Protocol": "TCP",
+      "Packets": 4873,
+      "Duration": 119259886,
+      "Label": "Heartbleed"
+    },
+    {
+      "Day": "Thursday",
+      "Protocol": "TCP",
+      "Packets": 85,
+      "Duration": 117923038,
+      "Label": "Infiltration"
+    },
+    {
+      "Day": "Thursday",
+      "Protocol": "TCP",
+      "Packets": 15,
+      "Duration": 48450959,
+      "Label": "Infiltration"
+    },
+    {
+      "Day": "Thursday",
+      "Protocol": "TCP",
+      "Packets": 52,
+      "Duration": 101039258,
+      "Label": "Infiltration"
+    },
+    {
+      "Day": "Thursday",
+      "Protocol": "TCP",
+      "Packets": 30,
+      "Duration": 5005212,
+      "Label": "Infiltration"
+    },
+    {
+      "Day": "Thursday",
+      "Protocol": "TCP",
+      "Packets": 30,
+      "Duration": 99651130,
+      "Label": "Infiltration"
+    },
+    {
+      "Day": "Thursday",
+      "Protocol": "TCP",
+      "Packets": 8,
+      "Duration": 18897509,
+      "Label": "Infiltration"
+    },
+    {
+      "Day": "Thursday",
+      "Protocol": "TCP",
+      "Packets": 40,
+      "Duration": 69714525,
+      "Label": "Infiltration"
+    },
+    {
+      "Day": "Thursday",
+      "Protocol": "TCP",
+      "Packets": 30,
+      "Duration": 99891716,
+      "Label": "Infiltration"
+    },
+    {
+      "Day": "Thursday",
+      "Protocol": "TCP",
+      "Packets": 40,
+      "Duration": 69483113,
+      "Label": "Infiltration"
+    },
+    {
+      "Day": "Thursday",
+      "Protocol": "TCP",
+      "Packets": 66,
+      "Duration": 25009948,
+      "Label": "Infiltration"
+    },
+    {
+      "Day": "Thursday",
+      "Protocol": "TCP",
+      "Packets": 30,
+      "Duration": 104790355,
+      "Label": "Infiltration"
+    },
+    {
+      "Day": "Thursday",
+      "Protocol": "TCP",
+      "Packets": 80,
+      "Duration": 79492070,
+      "Label": "Infiltration"
+    },
+    {
+      "Day": "Thursday",
+      "Protocol": "TCP",
+      "Packets": 50,
+      "Duration": 101086101,
+      "Label": "Infiltration"
+    },
+    {
+      "Day": "Thursday",
+      "Protocol": "TCP",
+      "Packets": 40,
+      "Duration": 67917167,
+      "Label": "Infiltration"
+    },
+    {
+      "Day": "Thursday",
+      "Protocol": "TCP",
+      "Packets": 8750,
+      "Duration": 119973135,
+      "Label": "Infiltration"
+    },
+    {
+      "Day": "Thursday",
+      "Protocol": "TCP",
+      "Packets": 11048,
+      "Duration": 119991834,
+      "Label": "Infiltration"
+    },
+    {
+      "Day": "Thursday",
+      "Protocol": "TCP",
+      "Packets": 3550,
+      "Duration": 86726608,
+      "Label": "Infiltration"
+    },
+    {
+      "Day": "Thursday",
+      "Protocol": "TCP",
+      "Packets": 2314,
+      "Duration": 119382036,
+      "Label": "Infiltration"
+    },
+    {
+      "Day": "Thursday",
+      "Protocol": "TCP",
+      "Packets": 42,
+      "Duration": 111406728,
+      "Label": "Infiltration"
+    },
+    {
+      "Day": "Thursday",
+      "Protocol": "TCP",
+      "Packets": 70,
+      "Duration": 24006815,
+      "Label": "Infiltration"
+    },
+    {
+      "Day": "Thursday",
+      "Protocol": "TCP",
+      "Packets": 52,
+      "Duration": 99912925,
+      "Label": "Infiltration"
+    },
+    {
+      "Day": "Thursday",
+      "Protocol": "TCP",
+      "Packets": 52,
+      "Duration": 100460141,
+      "Label": "Infiltration"
+    },
+    {
+      "Day": "Thursday",
+      "Protocol": "TCP",
+      "Packets": 66,
+      "Duration": 66695827,
+      "Label": "Infiltration"
+    },
+    {
+      "Day": "Thursday",
+      "Protocol": "TCP",
+      "Packets": 7624,
+      "Duration": 119993844,
+      "Label": "Infiltration"
+    },
+    {
+      "Day": "Thursday",
+      "Protocol": "TCP",
+      "Packets": 1008,
+      "Duration": 116393329,
+      "Label": "Infiltration"
+    },
+    {
+      "Day": "Friday",
+      "Protocol": "TCP",
+      "Packets": 3,
+      "Duration": 477,
+      "Label": "PortScan"
+    },
+    {
+      "Day": "Friday",
+      "Protocol": "TCP",
+      "Packets": 3,
+      "Duration": 687,
+      "Label": "PortScan"
+    },
+    {
+      "Day": "Friday",
+      "Protocol": "TCP",
+      "Packets": 2,
+      "Duration": 223,
+      "Label": "PortScan"
+    },
+    {
+      "Day": "Friday",
+      "Protocol": "TCP",
+      "Packets": 6,
+      "Duration": 12557,
+      "Label": "PortScan"
+    },
+    {
+      "Day": "Friday",
+      "Protocol": "TCP",
+      "Packets": 2,
+      "Duration": 674,
+      "Label": "PortScan"
+    },
+    {
+      "Day": "Friday",
+      "Protocol": "TCP",
+      "Packets": 6,
+      "Duration": 11008876,
+      "Label": "PortScan"
+    },
+    {
+      "Day": "Friday",
+      "Protocol": "TCP",
+      "Packets": 3,
+      "Duration": 695,
+      "Label": "PortScan"
+    },
+    {
+      "Day": "Friday",
+      "Protocol": "TCP",
+      "Packets": 4,
+      "Duration": 904,
+      "Label": "PortScan"
+    },
+    {
+      "Day": "Friday",
+      "Protocol": "TCP",
+      "Packets": 3,
+      "Duration": 607,
+      "Label": "PortScan"
+    },
+    {
+      "Day": "Friday",
+      "Protocol": "TCP",
+      "Packets": 11,
+      "Duration": 2168,
+      "Label": "PortScan"
+    },
+    {
+      "Day": "Friday",
+      "Protocol": "TCP",
+      "Packets": 4,
+      "Duration": 36732148,
+      "Label": "PortScan"
+    },
+    {
+      "Day": "Friday",
+      "Protocol": "HOPOPT",
+      "Packets": 8,
+      "Duration": 34167189,
+      "Label": "PortScan"
+    },
+    {
+      "Day": "Friday",
+      "Protocol": "TCP",
+      "Packets": 3,
+      "Duration": 793,
+      "Label": "PortScan"
+    },
+    {
+      "Day": "Friday",
+      "Protocol": "TCP",
+      "Packets": 3,
+      "Duration": 923,
+      "Label": "PortScan"
+    },
+    {
+      "Day": "Friday",
+      "Protocol": "TCP",
+      "Packets": 8,
+      "Duration": 6027003,
+      "Label": "PortScan"
+    },
+    {
+      "Day": "Friday",
+      "Protocol": "TCP",
+      "Packets": 11,
+      "Duration": 2464,
+      "Label": "PortScan"
+    },
+    {
+      "Day": "Friday",
+      "Protocol": "TCP",
+      "Packets": 3,
+      "Duration": 469,
+      "Label": "PortScan"
+    },
+    {
+      "Day": "Friday",
+      "Protocol": "TCP",
+      "Packets": 3,
+      "Duration": 536,
+      "Label": "PortScan"
+    },
+    {
+      "Day": "Friday",
+      "Protocol": "TCP",
+      "Packets": 3,
+      "Duration": 603,
+      "Label": "PortScan"
+    },
+    {
+      "Day": "Friday",
+      "Protocol": "TCP",
+      "Packets": 4,
+      "Duration": 638,
+      "Label": "PortScan"
+    },
+    {
+      "Day": "Friday",
+      "Protocol": "TCP",
+      "Packets": 4,
+      "Duration": 18435588,
+      "Label": "PortScan"
+    },
+    {
+      "Day": "Friday",
+      "Protocol": "TCP",
+      "Packets": 3,
+      "Duration": 612,
+      "Label": "PortScan"
+    },
+    {
+      "Day": "Friday",
+      "Protocol": "TCP",
+      "Packets": 2,
+      "Duration": 57,
+      "Label": "PortScan"
+    },
+    {
+      "Day": "Friday",
+      "Protocol": "TCP",
+      "Packets": 3,
+      "Duration": 476,
+      "Label": "PortScan"
+    },
+    {
+      "Day": "Friday",
+      "Protocol": "TCP",
+      "Packets": 4,
+      "Duration": 1025,
+      "Label": "PortScan"
+    },
+    {
+      "Day": "Tuesday",
+      "Protocol": "TCP",
+      "Packets": 53,
+      "Duration": 12369656,
+      "Label": "SSH - Patator"
+    },
+    {
+      "Day": "Tuesday",
+      "Protocol": "TCP",
+      "Packets": 53,
+      "Duration": 11980921,
+      "Label": "SSH - Patator"
+    },
+    {
+      "Day": "Tuesday",
+      "Protocol": "TCP",
+      "Packets": 55,
+      "Duration": 13472209,
+      "Label": "SSH - Patator"
+    },
+    {
+      "Day": "Tuesday",
+      "Protocol": "TCP",
+      "Packets": 53,
+      "Duration": 13375889,
+      "Label": "SSH - Patator"
+    },
+    {
+      "Day": "Tuesday",
+      "Protocol": "TCP",
+      "Packets": 36,
+      "Duration": 5797001,
+      "Label": "SSH - Patator"
+    },
+    {
+      "Day": "Tuesday",
+      "Protocol": "TCP",
+      "Packets": 53,
+      "Duration": 12179333,
+      "Label": "SSH - Patator"
+    },
+    {
+      "Day": "Tuesday",
+      "Protocol": "TCP",
+      "Packets": 57,
+      "Duration": 11793007,
+      "Label": "SSH - Patator"
+    },
+    {
+      "Day": "Tuesday",
+      "Protocol": "TCP",
+      "Packets": 53,
+      "Duration": 11376424,
+      "Label": "SSH - Patator"
+    },
+    {
+      "Day": "Tuesday",
+      "Protocol": "TCP",
+      "Packets": 50,
+      "Duration": 11360252,
+      "Label": "SSH - Patator"
+    },
+    {
+      "Day": "Tuesday",
+      "Protocol": "TCP",
+      "Packets": 24,
+      "Duration": 1937542,
+      "Label": "SSH - Patator"
+    },
+    {
+      "Day": "Tuesday",
+      "Protocol": "TCP",
+      "Packets": 53,
+      "Duration": 13177680,
+      "Label": "SSH - Patator"
+    },
+    {
+      "Day": "Tuesday",
+      "Protocol": "TCP",
+      "Packets": 52,
+      "Duration": 12280121,
+      "Label": "SSH - Patator"
+    },
+    {
+      "Day": "Tuesday",
+      "Protocol": "TCP",
+      "Packets": 53,
+      "Duration": 12854092,
+      "Label": "SSH - Patator"
+    },
+    {
+      "Day": "Tuesday",
+      "Protocol": "TCP",
+      "Packets": 55,
+      "Duration": 14101296,
+      "Label": "SSH - Patator"
+    },
+    {
+      "Day": "Tuesday",
+      "Protocol": "TCP",
+      "Packets": 50,
+      "Duration": 11796801,
+      "Label": "SSH - Patator"
+    },
+    {
+      "Day": "Tuesday",
+      "Protocol": "TCP",
+      "Packets": 55,
+      "Duration": 12375623,
+      "Label": "SSH - Patator"
+    },
+    {
+      "Day": "Tuesday",
+      "Protocol": "TCP",
+      "Packets": 55,
+      "Duration": 11693624,
+      "Label": "SSH - Patator"
+    },
+    {
+      "Day": "Tuesday",
+      "Protocol": "TCP",
+      "Packets": 53,
+      "Duration": 10321231,
+      "Label": "SSH - Patator"
+    },
+    {
+      "Day": "Tuesday",
+      "Protocol": "TCP",
+      "Packets": 53,
+      "Duration": 11588893,
+      "Label": "SSH - Patator"
+    },
+    {
+      "Day": "Tuesday",
+      "Protocol": "TCP",
+      "Packets": 53,
+      "Duration": 11712588,
+      "Label": "SSH - Patator"
+    },
+    {
+      "Day": "Tuesday",
+      "Protocol": "TCP",
+      "Packets": 2,
+      "Duration": 36,
+      "Label": "SSH - Patator"
+    },
+    {
+      "Day": "Tuesday",
+      "Protocol": "TCP",
+      "Packets": 54,
+      "Duration": 13285940,
+      "Label": "SSH - Patator"
+    },
+    {
+      "Day": "Tuesday",
+      "Protocol": "TCP",
+      "Packets": 50,
+      "Duration": 12438923,
+      "Label": "SSH - Patator"
+    },
+    {
+      "Day": "Tuesday",
+      "Protocol": "TCP",
+      "Packets": 39,
+      "Duration": 8528425,
+      "Label": "SSH - Patator"
+    },
+    {
+      "Day": "Tuesday",
+      "Protocol": "TCP",
+      "Packets": 54,
+      "Duration": 11904188,
+      "Label": "SSH - Patator"
+    },
+    {
+      "Day": "Thursday",
+      "Protocol": "TCP",
+      "Packets": 4,
+      "Duration": 5662817,
+      "Label": "Web - Attack - Brute - Force"
+    },
+    {
+      "Day": "Thursday",
+      "Protocol": "TCP",
+      "Packets": 4,
+      "Duration": 5891644,
+      "Label": "Web - Attack - Brute - Force"
+    },
+    {
+      "Day": "Thursday",
+      "Protocol": "TCP",
+      "Packets": 4,
+      "Duration": 5474506,
+      "Label": "Web - Attack - Brute - Force"
+    },
+    {
+      "Day": "Thursday",
+      "Protocol": "TCP",
+      "Packets": 4,
+      "Duration": 5338311,
+      "Label": "Web - Attack - Brute - Force"
+    },
+    {
+      "Day": "Thursday",
+      "Protocol": "TCP",
+      "Packets": 4,
+      "Duration": 5040498,
+      "Label": "Web - Attack - Brute - Force"
+    },
+    {
+      "Day": "Thursday",
+      "Protocol": "TCP",
+      "Packets": 8,
+      "Duration": 8796073,
+      "Label": "Web - Attack - Brute - Force"
+    },
+    {
+      "Day": "Thursday",
+      "Protocol": "TCP",
+      "Packets": 4,
+      "Duration": 5878747,
+      "Label": "Web - Attack - Brute - Force"
+    },
+    {
+      "Day": "Thursday",
+      "Protocol": "TCP",
+      "Packets": 4,
+      "Duration": 5898951,
+      "Label": "Web - Attack - Brute - Force"
+    },
+    {
+      "Day": "Thursday",
+      "Protocol": "TCP",
+      "Packets": 4,
+      "Duration": 5016378,
+      "Label": "Web - Attack - Brute - Force"
+    },
+    {
+      "Day": "Thursday",
+      "Protocol": "TCP",
+      "Packets": 4,
+      "Duration": 5501644,
+      "Label": "Web - Attack - Brute - Force"
+    },
+    {
+      "Day": "Thursday",
+      "Protocol": "TCP",
+      "Packets": 4,
+      "Duration": 5979689,
+      "Label": "Web - Attack - Brute - Force"
+    },
+    {
+      "Day": "Thursday",
+      "Protocol": "TCP",
+      "Packets": 4,
+      "Duration": 5813749,
+      "Label": "Web - Attack - Brute - Force"
+    },
+    {
+      "Day": "Thursday",
+      "Protocol": "TCP",
+      "Packets": 4,
+      "Duration": 5007231,
+      "Label": "Web - Attack - Brute - Force"
+    },
+    {
+      "Day": "Thursday",
+      "Protocol": "TCP",
+      "Packets": 4,
+      "Duration": 5437735,
+      "Label": "Web - Attack - Brute - Force"
+    },
+    {
+      "Day": "Thursday",
+      "Protocol": "TCP",
+      "Packets": 307,
+      "Duration": 34305613,
+      "Label": "Web - Attack - Brute - Force"
+    },
+    {
+      "Day": "Thursday",
+      "Protocol": "TCP",
+      "Packets": 4,
+      "Duration": 5754784,
+      "Label": "Web - Attack - Brute - Force"
+    },
+    {
+      "Day": "Thursday",
+      "Protocol": "TCP",
+      "Packets": 4,
+      "Duration": 5821487,
+      "Label": "Web - Attack - Brute - Force"
+    },
+    {
+      "Day": "Thursday",
+      "Protocol": "TCP",
+      "Packets": 4,
+      "Duration": 5081436,
+      "Label": "Web - Attack - Brute - Force"
+    },
+    {
+      "Day": "Thursday",
+      "Protocol": "TCP",
+      "Packets": 307,
+      "Duration": 34239697,
+      "Label": "Web - Attack - Brute - Force"
+    },
+    {
+      "Day": "Thursday",
+      "Protocol": "TCP",
+      "Packets": 8,
+      "Duration": 9810809,
+      "Label": "Web - Attack - Brute - Force"
+    },
+    {
+      "Day": "Thursday",
+      "Protocol": "TCP",
+      "Packets": 4,
+      "Duration": 5546742,
+      "Label": "Web - Attack - Brute - Force"
+    },
+    {
+      "Day": "Thursday",
+      "Protocol": "TCP",
+      "Packets": 4,
+      "Duration": 5039817,
+      "Label": "Web - Attack - Brute - Force"
+    },
+    {
+      "Day": "Thursday",
+      "Protocol": "TCP",
+      "Packets": 8,
+      "Duration": 9858174,
+      "Label": "Web - Attack - Brute - Force"
+    },
+    {
+      "Day": "Thursday",
+      "Protocol": "TCP",
+      "Packets": 4,
+      "Duration": 5825126,
+      "Label": "Web - Attack - Brute - Force"
+    },
+    {
+      "Day": "Thursday",
+      "Protocol": "TCP",
+      "Packets": 4,
+      "Duration": 5222648,
+      "Label": "Web - Attack - Brute - Force"
+    },
+    {
+      "Day": "Thursday",
+      "Protocol": "TCP",
+      "Packets": 2,
+      "Duration": 42,
+      "Label": "Web - Attack - Sql - Injection"
+    },
+    {
+      "Day": "Thursday",
+      "Protocol": "TCP",
+      "Packets": 8,
+      "Duration": 5005388,
+      "Label": "Web - Attack - Sql - Injection"
+    },
+    {
+      "Day": "Thursday",
+      "Protocol": "TCP",
+      "Packets": 9,
+      "Duration": 5086516,
+      "Label": "Web - Attack - Sql - Injection"
+    },
+    {
+      "Day": "Thursday",
+      "Protocol": "TCP",
+      "Packets": 8,
+      "Duration": 5009041,
+      "Label": "Web - Attack - Sql - Injection"
+    },
+    {
+      "Day": "Thursday",
+      "Protocol": "TCP",
+      "Packets": 8,
+      "Duration": 5069927,
+      "Label": "Web - Attack - Sql - Injection"
+    },
+    {
+      "Day": "Thursday",
+      "Protocol": "TCP",
+      "Packets": 8,
+      "Duration": 5007460,
+      "Label": "Web - Attack - Sql - Injection"
+    },
+    {
+      "Day": "Thursday",
+      "Protocol": "TCP",
+      "Packets": 8,
+      "Duration": 5038618,
+      "Label": "Web - Attack - Sql - Injection"
+    },
+    {
+      "Day": "Thursday",
+      "Protocol": "TCP",
+      "Packets": 10,
+      "Duration": 5016759,
+      "Label": "Web - Attack - Sql - Injection"
+    },
+    {
+      "Day": "Thursday",
+      "Protocol": "TCP",
+      "Packets": 2,
+      "Duration": 48,
+      "Label": "Web - Attack - Sql - Injection"
+    },
+    {
+      "Day": "Thursday",
+      "Protocol": "TCP",
+      "Packets": 3,
+      "Duration": 508,
+      "Label": "Web - Attack - Sql - Injection"
+    },
+    {
+      "Day": "Thursday",
+      "Protocol": "TCP",
+      "Packets": 2,
+      "Duration": 73,
+      "Label": "Web - Attack - Sql - Injection"
+    },
+    {
+      "Day": "Thursday",
+      "Protocol": "TCP",
+      "Packets": 8,
+      "Duration": 5006127,
+      "Label": "Web - Attack - Sql - Injection"
+    },
+    {
+      "Day": "Thursday",
+      "Protocol": "TCP",
+      "Packets": 2,
+      "Duration": 109,
+      "Label": "Web - Attack - Sql - Injection"
+    },
+    {
+      "Day": "Thursday",
+      "Protocol": "TCP",
+      "Packets": 8,
+      "Duration": 5009163,
+      "Label": "Web - Attack - Sql - Injection"
+    },
+    {
+      "Day": "Thursday",
+      "Protocol": "TCP",
+      "Packets": 2,
+      "Duration": 78,
+      "Label": "Web - Attack - Sql - Injection"
+    },
+    {
+      "Day": "Thursday",
+      "Protocol": "TCP",
+      "Packets": 10,
+      "Duration": 5012479,
+      "Label": "Web - Attack - Sql - Injection"
+    },
+    {
+      "Day": "Thursday",
+      "Protocol": "TCP",
+      "Packets": 8,
+      "Duration": 5006168,
+      "Label": "Web - Attack - Sql - Injection"
+    },
+    {
+      "Day": "Thursday",
+      "Protocol": "TCP",
+      "Packets": 8,
+      "Duration": 5009673,
+      "Label": "Web - Attack - Sql - Injection"
+    },
+    {
+      "Day": "Thursday",
+      "Protocol": "TCP",
+      "Packets": 2,
+      "Duration": 71,
+      "Label": "Web - Attack - Sql - Injection"
+    },
+    {
+      "Day": "Thursday",
+      "Protocol": "TCP",
+      "Packets": 2,
+      "Duration": 43,
+      "Label": "Web - Attack - Sql - Injection"
+    },
+    {
+      "Day": "Thursday",
+      "Protocol": "TCP",
+      "Packets": 4,
+      "Duration": 5294958,
+      "Label": "Web - Attack - XSS"
+    },
+    {
+      "Day": "Thursday",
+      "Protocol": "TCP",
+      "Packets": 4,
+      "Duration": 5466759,
+      "Label": "Web - Attack - XSS"
+    },
+    {
+      "Day": "Thursday",
+      "Protocol": "TCP",
+      "Packets": 4,
+      "Duration": 5291554,
+      "Label": "Web - Attack - XSS"
+    },
+    {
+      "Day": "Thursday",
+      "Protocol": "TCP",
+      "Packets": 4,
+      "Duration": 5302934,
+      "Label": "Web - Attack - XSS"
+    },
+    {
+      "Day": "Thursday",
+      "Protocol": "TCP",
+      "Packets": 4,
+      "Duration": 5603632,
+      "Label": "Web - Attack - XSS"
+    },
+    {
+      "Day": "Thursday",
+      "Protocol": "TCP",
+      "Packets": 4,
+      "Duration": 5365414,
+      "Label": "Web - Attack - XSS"
+    },
+    {
+      "Day": "Thursday",
+      "Protocol": "TCP",
+      "Packets": 4,
+      "Duration": 5501637,
+      "Label": "Web - Attack - XSS"
+    },
+    {
+      "Day": "Thursday",
+      "Protocol": "TCP",
+      "Packets": 4,
+      "Duration": 5076816,
+      "Label": "Web - Attack - XSS"
+    },
+    {
+      "Day": "Thursday",
+      "Protocol": "TCP",
+      "Packets": 4,
+      "Duration": 5287389,
+      "Label": "Web - Attack - XSS"
+    },
+    {
+      "Day": "Thursday",
+      "Protocol": "TCP",
+      "Packets": 4,
+      "Duration": 5629963,
+      "Label": "Web - Attack - XSS"
+    },
+    {
+      "Day": "Thursday",
+      "Protocol": "TCP",
+      "Packets": 4,
+      "Duration": 5990459,
+      "Label": "Web - Attack - XSS"
+    },
+    {
+      "Day": "Thursday",
+      "Protocol": "TCP",
+      "Packets": 4,
+      "Duration": 5500666,
+      "Label": "Web - Attack - XSS"
+    },
+    {
+      "Day": "Thursday",
+      "Protocol": "TCP",
+      "Packets": 2,
+      "Duration": 18,
+      "Label": "Web - Attack - XSS"
+    },
+    {
+      "Day": "Thursday",
+      "Protocol": "TCP",
+      "Packets": 4,
+      "Duration": 5985904,
+      "Label": "Web - Attack - XSS"
+    },
+    {
+      "Day": "Thursday",
+      "Protocol": "TCP",
+      "Packets": 4,
+      "Duration": 5130556,
+      "Label": "Web - Attack - XSS"
+    },
+    {
+      "Day": "Thursday",
+      "Protocol": "TCP",
+      "Packets": 4,
+      "Duration": 5551353,
+      "Label": "Web - Attack - XSS"
+    },
+    {
+      "Day": "Thursday",
+      "Protocol": "TCP",
+      "Packets": 4,
+      "Duration": 5476931,
+      "Label": "Web - Attack - XSS"
+    },
+    {
+      "Day": "Thursday",
+      "Protocol": "TCP",
+      "Packets": 4,
+      "Duration": 5275883,
+      "Label": "Web - Attack - XSS"
+    },
+    {
+      "Day": "Thursday",
+      "Protocol": "TCP",
+      "Packets": 4,
+      "Duration": 5175414,
+      "Label": "Web - Attack - XSS"
+    },
+    {
+      "Day": "Thursday",
+      "Protocol": "TCP",
+      "Packets": 4,
+      "Duration": 5041839,
+      "Label": "Web - Attack - XSS"
+    },
+    {
+      "Day": "Thursday",
+      "Protocol": "TCP",
+      "Packets": 4,
+      "Duration": 5208136,
+      "Label": "Web - Attack - XSS"
+    },
+    {
+      "Day": "Thursday",
+      "Protocol": "TCP",
+      "Packets": 4,
+      "Duration": 5832373,
+      "Label": "Web - Attack - XSS"
+    },
+    {
+      "Day": "Thursday",
+      "Protocol": "TCP",
+      "Packets": 4,
+      "Duration": 5671865,
+      "Label": "Web - Attack - XSS"
+    },
+    {
+      "Day": "Thursday",
+      "Protocol": "TCP",
+      "Packets": 4,
+      "Duration": 5460462,
+      "Label": "Web - Attack - XSS"
+    },
+    {
+      "Day": "Thursday",
+      "Protocol": "TCP",
+      "Packets": 4,
+      "Duration": 5150151,
+      "Label": "Web - Attack - XSS"
+    }
+  ]
+}
