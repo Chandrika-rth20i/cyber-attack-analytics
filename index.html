@@ -100,15 +100,15 @@ body { animation: fadeSlideIn 0.5s ease; }
     <div class="grid2">
       <div class="card">
         <div class="card-head"><div><h3>Attack Types</h3><small>Flows per attack category</small></div><span class="tag">BAR</span></div>
-        <canvas id="chartLabels"></canvas>
+        <div style="max-height:260px;"><canvas id="chartLabels"></canvas></div>
       </div>
       <div class="card">
         <div class="card-head"><div><h3>Traffic by Protocol</h3><small>Share of network protocols</small></div><span class="tag">PIE</span></div>
-        <canvas id="chartProtocol"></canvas>
+        <div style="max-height:260px;"><canvas id="chartProtocol"></canvas></div>
       </div>
       <div class="card">
         <div class="card-head"><div><h3>Attack vs Benign</h3><small>Overall traffic split</small></div><span class="tag">SPLIT</span></div>
-        <canvas id="chartSplit"></canvas>
+        <div style="max-height:260px;"><canvas id="chartSplit"></canvas></div>
       </div>
     </div>
   </div>
@@ -147,7 +147,7 @@ body { animation: fadeSlideIn 0.5s ease; }
     <p class="muted">Average connection duration per attack type &mdash; longer durations often mean sustained attacks.</p>
     <div class="card">
       <div class="card-head"><div><h3>Avg Flow Duration by Attack</h3><small>Milliseconds per connection</small></div><span class="tag">BAR</span></div>
-      <canvas id="chartDuration"></canvas>
+      <div style="max-height:260px;"><canvas id="chartDuration"></canvas></div>
     </div>
     <div class="card">
       <div class="card-head"><div><h3>Protocol vs Attack Type</h3><small>Darker = more flows for that combination</small></div><span class="tag">HEATMAP</span></div>
@@ -185,6 +185,10 @@ body { animation: fadeSlideIn 0.5s ease; }
         </thead>
         <tbody id="riskTable"></tbody>
       </table>
+    </div>
+    <div class="card">
+      <div class="card-head"><div><h3>Duration vs Packets</h3><small>Each dot is one attack type &mdash; top-right corner is highest risk</small></div><span class="tag">SCATTER</span></div>
+      <div style="max-height:320px;"><canvas id="chartRiskScatter"></canvas></div>
     </div>
   </div>
   <div class="page" id="page-sim">
@@ -335,7 +339,34 @@ function renderRisk(data) {
 
 fetch("data.json").then(r => r.json()).then(renderRisk);
 
+fetch("data.json").then(r => r.json()).then(data => {
+  const durs = data.avg_duration, pkts = data.avg_packets;
+  const names = Object.keys(durs).filter(n => n !== "Benign");
+  const palette = ["#3ea0ff","#2ee6c5","#ff6b6b","#ffd166","#a78bfa","#f472b6","#34d399","#fb923c","#60a5fa","#f87171","#4ade80","#c084fc","#facc15","#38bdf8"];
+
+  new Chart(document.getElementById("chartRiskScatter"), {
+    type: "scatter",
+    data: {
+      datasets: names.map((n, i) => ({
+        label: n,
+        data: [{ x: durs[n], y: pkts[n] }],
+        backgroundColor: palette[i % palette.length],
+        pointRadius: 8,
+        pointHoverRadius: 10
+      }))
+    },
+    options: {
+      scales: {
+        x: { title: { display: true, text: "Avg Flow Duration (ms)" } },
+        y: { title: { display: true, text: "Avg Packets" } }
+      },
+      plugins: { legend: { position: "bottom", labels: { boxWidth: 10, font: { size: 10 } } } }
+    }
+  });
+});
+
 main();
+Chart.defaults.maintainAspectRatio = false;
 
 fetch("data.json").then(r => r.json()).then(data => {
   const protos = Object.keys(data.by_protocol);
@@ -484,6 +515,8 @@ document.getElementById("simRun").addEventListener("click", () => {
 </script>
 </body>
 </html>
+
+
 
 
 
