@@ -106,6 +106,10 @@ body { animation: fadeSlideIn 0.5s ease; }
         <div class="card-head"><div><h3>Traffic by Protocol</h3><small>Share of network protocols</small></div><span class="tag">PIE</span></div>
         <canvas id="chartProtocol"></canvas>
       </div>
+      <div class="card">
+        <div class="card-head"><div><h3>Attack vs Benign</h3><small>Overall traffic split</small></div><span class="tag">SPLIT</span></div>
+        <canvas id="chartSplit"></canvas>
+      </div>
     </div>
   </div>
 
@@ -144,6 +148,12 @@ body { animation: fadeSlideIn 0.5s ease; }
     <div class="card">
       <div class="card-head"><div><h3>Avg Flow Duration by Attack</h3><small>Milliseconds per connection</small></div><span class="tag">BAR</span></div>
       <canvas id="chartDuration"></canvas>
+    </div>
+    <div class="card">
+      <div class="card-head"><div><h3>Protocol vs Attack Type</h3><small>Darker = more flows for that combination</small></div><span class="tag">HEATMAP</span></div>
+      <div style="overflow-x:auto;">
+        <table id="heatmapTable" style="width:100%; border-collapse:collapse; font-size:13px;"></table>
+      </div>
     </div>
   </div>
 
@@ -327,6 +337,41 @@ fetch("data.json").then(r => r.json()).then(renderRisk);
 
 main();
 
+fetch("data.json").then(r => r.json()).then(data => {
+  const protos = Object.keys(data.by_protocol);
+  const labels = [...new Set(protos.flatMap(p => Object.keys(data.by_protocol[p])))].filter(l => l !== "Benign");
+  let max = 0;
+  protos.forEach(p => labels.forEach(l => { max = Math.max(max, data.by_protocol[p][l] || 0); }));
+
+  let html = "<tr><th style=\"padding:8px; text-align:left;\">Protocol</th>" +
+    labels.map(l => `<th style="padding:8px; font-size:11px; white-space:nowrap;">${l}</th>`).join("") + "</tr>";
+
+  protos.forEach(p => {
+    html += `<tr><td style="padding:8px; font-weight:600;">${p}</td>`;
+    labels.forEach(l => {
+      const v = data.by_protocol[p][l] || 0;
+      const intensity = max ? v / max : 0;
+      const bg = `rgba(62,160,255,${(intensity * 0.85 + 0.05).toFixed(2)})`;
+      const textColor = intensity > 0.5 ? "#fff" : "#1a2233";
+      html += `<td style="padding:8px; text-align:center; background:${bg}; color:${textColor};">${v.toLocaleString()}</td>`;
+    });
+    html += "</tr>";
+  });
+
+  document.getElementById("heatmapTable").innerHTML = html;
+});
+
+fetch("data.json").then(r => r.json()).then(data => {
+  new Chart(document.getElementById("chartSplit"), {
+    type: "doughnut",
+    data: {
+      labels: ["Benign", "Attack"],
+      datasets: [{ data: [data.kpis.benign_flows, data.kpis.attack_flows], backgroundColor: ["#2ee6c5", "#ff6b6b"] }]
+    },
+    options: { plugins: { legend: { position: "bottom" } } }
+  });
+});
+
 document.getElementById("chooseBtn")?.addEventListener("click", () => document.getElementById("fileInput").click());
 document.getElementById("dropZone")?.addEventListener("dragover", e => e.preventDefault());
 document.getElementById("dropZone")?.addEventListener("drop", e => {
@@ -439,6 +484,8 @@ document.getElementById("simRun").addEventListener("click", () => {
 </script>
 </body>
 </html>
+
+
 
 
 
